@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jan Kremer</title>
+    <link>https://jankremer.eu/</link>
+    <description>Recent content on Jan Kremer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>2024-03-14 00:00</lastBuildDate><atom:link href="https://jankremer.eu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nix on macOS</title>
+      <link>https://jankremer.eu/blog/nix/</link>
+      <pubDate>2024-03-14 00:00</pubDate>
+      
+      <guid>https://jankremer.eu/blog/nix/</guid>
+      <description>&lt;p&gt;For about a year, I&amp;rsquo;ve been fascinated by &lt;a href=&#34;https://nixos.org&#34;&gt;Nix and NixOS&lt;/a&gt;. I don&amp;rsquo;t remember exactly what fascinated me at first, probably the possibility to setup and configure my system using a single file. A few weeks ago, I decided to give it a serious try.&lt;/p&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;To be honest this is not my first time installing Nix on my machine. I tried the official Nix installer and the &amp;ldquo;old&amp;rdquo; way to use Nix which is basically the same as any other package manager. I didn&amp;rsquo;t see the point of having two package managers so I uninstalled Nix quickly after.&lt;/p&gt;
+&lt;p&gt;Then, a few weeks ago, I came across &lt;a href=&#34;https://nixcademy.com/2024/01/15/nix-on-macos/&#34;&gt;this guide&lt;/a&gt; and it instantly clicked with me. Having a single file in which I declare my complete system and then have it set up in a few minutes without rebooting is just infinitely cool. In Nix, this feature is called &lt;em&gt;flake&lt;/em&gt;. The guide uses the &lt;a href=&#34;https://github.com/DeterminateSystems/nix-installer&#34;&gt;Determinate systems installer&lt;/a&gt; which sets up flakes by default. It also explains how to install Nix Darwin.&lt;/p&gt;
+&lt;h2 id=&#34;nix-darwin&#34;&gt;Nix Darwin&lt;/h2&gt;
+&lt;p&gt;Nix Darwin is a set of Nix modules that brings declarative configuration to macOS. It includes a bunch of options such as for the dock, Finder or the keyboard for example. It also gives the user basic configuration options for various programs. However I prefer to set up terminal based programs using &lt;a href=&#34;#home-manager&#34;&gt;Home Manager&lt;/a&gt; instead, because it supports even more programs.&lt;/p&gt;
+&lt;p&gt;What I do use extensively is the &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt; module to install not only GUI (graphical user interface) apps from Homebrew, but also from the App Store.&lt;/p&gt;
+&lt;h2 id=&#34;home-manager&#34;&gt;Home Manager&lt;/h2&gt;
+&lt;p&gt;For everything else, from terminal based programs to their configuration, I use &lt;a href=&#34;https://github.com/nix-community/home-manager?tab=readme-ov-file&#34;&gt;Home Manager&lt;/a&gt;. It includes a huge set of modules and allows me to setup every non-GUI program in a declarative way. Still, sometimes you have to configure the &amp;ldquo;traditional way&amp;rdquo;, meaning in the original configuration language. But still, I much prefer this over my cluttered &lt;code&gt;.config&lt;/code&gt; directory.&lt;/p&gt;
+&lt;h2 id=&#34;nixvim&#34;&gt;Nixvim&lt;/h2&gt;
+&lt;p&gt;In the process of writing my Nix configuration, I became unsatisfied with my Neovim setup. I used to use &lt;a href=&#34;https://www.lazyvim.org&#34;&gt;LazyVim&lt;/a&gt; but it felt more and more bloated and slow on my 9 year old machine. For some time I used &lt;a href=&#34;https://helix-editor.com/&#34;&gt;Helix&lt;/a&gt; which has great defaults, such as language server protocol (LSP) and fuzzy finder integration. I really think Neovim should go in this direction. Unfortunately it lacks some features to make it my main editor, mostly support for &lt;a href=&#34;https://typst.app/&#34;&gt;Typst&lt;/a&gt; which is already added to the &lt;code&gt;master&lt;/code&gt; branch. It also lacks a plugin system, but given such great defaults, there isn&amp;rsquo;t that big of a need for it. Helix also features its own set of motions, and although I think they are not bad, maybe even better than Vim motions, the latter are so ubiquitously implemented that I would essentially use both all the time.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s when I saw a video by &lt;em&gt;ThePrimeagen&lt;/em&gt; in which he recommended &lt;a href=&#34;https://github.com/nvim-lua/kickstart.nvim/tree/master&#34;&gt;Kickstart&lt;/a&gt;, a minimal Neovim starter configuration mainly written by &lt;em&gt;TJ DeVries&lt;/em&gt;. It almost everything you need to get started and has insanely great documentation.&lt;/p&gt;
+&lt;p&gt;The only thing that bothered me was the use of &lt;a href=&#34;https://github.com/williamboman/mason.nvim&#34;&gt;Mason&lt;/a&gt; as a LSP package manager. For some people this might be the best way to install LSPs, but I don&amp;rsquo;t understand why I would use a second package manager when I can just use Nix for everything. Helix has a list of supported LSPs and all you have to do is make sure they are in your &lt;code&gt;$PATH&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Luckily, others already had the same issues and decided to write &lt;a href=&#34;https://github.com/nix-community/nixvim&#34;&gt;Nixvim&lt;/a&gt;. Nixvim is a NixOS / Nix Darwin / Home manager module that lets you configure Neovim (almost) entirely using Nix. It uses Nix as the plugin manager and has great defaults and documentation.&lt;/p&gt;
+&lt;p&gt;I basically recreated Kickstart using Nixvim with some minor tweaks. It feels just as snappy as Helix and I love it.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This is just the tip of the tip of the iceberg of what is possible with Nix. Next, I want to learn to write my own flakes to set up development environments. I should probably learn a bit of Nix language too. But to sum it up so far, I&amp;rsquo;m really happy and excited about this &amp;ldquo;new&amp;rdquo; way to manage my computer.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What I&#39;m currently doing</title>
+      <link>https://jankremer.eu/now/</link>
+      <pubDate>2023-12-30 08:34</pubDate>
+      
+      <guid>https://jankremer.eu/now/</guid>
+      <description>&lt;h2 id=&#34;learning&#34;&gt;Learning&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pharmazeutische Technologie&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;reading&#34;&gt;Reading&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Kaffee und Zigaretten – Ferdinand von Schirach&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;watching&#34;&gt;Watching&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Germany&amp;rsquo;s next topmodel&lt;/li&gt;
+&lt;li&gt;Rosins Restaurants&lt;/li&gt;
+&lt;li&gt;Batman – The animated series&lt;/li&gt;
+&lt;li&gt;Band of Brothers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;listening&#34;&gt;Listening&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Kölsche Karnevalsmusik (yeah I know Karneval is over)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What I use</title>
+      <link>https://jankremer.eu/uses/</link>
+      <pubDate>2023-12-30 08:03</pubDate>
+      
+      <guid>https://jankremer.eu/uses/</guid>
+      <description>&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;MacBook Pro 2015&lt;/li&gt;
+&lt;li&gt;iPhone X&lt;/li&gt;
+&lt;li&gt;Apple Watch SE&lt;/li&gt;
+&lt;li&gt;AirPods Pro&lt;/li&gt;
+&lt;li&gt;Logitech MX Master 3 (rarely)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Category&lt;/th&gt;
+&lt;th&gt;Software&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Unless otherwise stated&lt;/td&gt;
+&lt;td&gt;Apple default apps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RSS reader&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://netnewswire.com&#34;&gt;NetNewsWire&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Notes&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://obsidian.md&#34;&gt;Obsidian&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;To-Do list&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://culturedcode.com/things&#34;&gt;Things&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Text editor&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://neovim.io&#34;&gt;Neovim&lt;/a&gt;, &lt;a href=&#34;https://helix-editor.com&#34;&gt;Helix&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Word processing&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://typst.app&#34;&gt;Typst&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Window manager&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/ianyh/Amethyst&#34;&gt;Amethyst&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Terminal emulator&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://sw.kovidgoyal.net/kitty&#34;&gt;Kitty&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Package manager&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://nixos.org&#34;&gt;Nix&lt;/a&gt;, &lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Markdown Tables Suck</title>
+      <link>https://jankremer.eu/micro/markdown-tables/</link>
+      <pubDate>2023-12-25 16:28</pubDate>
+      
+      <guid>https://jankremer.eu/micro/markdown-tables/</guid>
+      <description>&lt;p&gt;Tables are arguably the worst part of Markdown.
+No horizontal lines except for the mandatory one at the top.
+The only feature is the possibility to align cells.&lt;/p&gt;
+&lt;p&gt;Org Mode does much better, but isn&amp;rsquo;t perfect either.&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t get me wrong. It&amp;rsquo;s nice to have a simple tool for simple tables.
+But sometimes I need more customizability.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Use Timestamps</title>
+      <link>https://jankremer.eu/micro/timestamps/</link>
+      <pubDate>2023-11-15 10:12</pubDate>
+      
+      <guid>https://jankremer.eu/micro/timestamps/</guid>
+      <description>&lt;p&gt;
+Every blog post should include a timestamp.
+In fact, this extends to almost anything online and even offline.&lt;/p&gt;
+&lt;p&gt;
+Also, don&amp;#39;t make me look for the date.
+Put the date as obvious as possible, preferably at the beginning of the post.&lt;/p&gt;
+&lt;p&gt;
+I was reading &lt;a href=&#34;https://jvns.ca/blog/2023/02/28/some-notes-on-using-nix/&#34;&gt;Julia Evans post about nix&lt;/a&gt; and it was not immediately clear to me if this was a recent post.
+Only when I copied the URL to complain about it I discovered the date there.
+Safari hides most of the URL by default.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Deploy a website using Git</title>
+      <link>https://jankremer.eu/blog/git-deploy/</link>
+      <pubDate>2023-09-25 00:00</pubDate>
+      
+      <guid>https://jankremer.eu/blog/git-deploy/</guid>
+      <description>&lt;h2 id=&#34;git-ftp&#34;&gt;Git-ftp&lt;/h2&gt;
+&lt;p&gt;I tested a lot of different FTP programs including GUIs, TUIs and CLIs.
+There might be a problem with the FTP server but I don&amp;rsquo;t control that unfortunately.
+The only program working flawlessly so far is &lt;a href=&#34;https://git-ftp.github.io/&#34;&gt;git-ftp&lt;/a&gt;, a plugin for Git.
+Not only is this perfectly integrated into git, which I am using anyway.
+Also no errors occurred so far.
+Plus I can automate the upload using &lt;a href=&#34;#git-hooks&#34;&gt;hooks&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;git-hooks&#34;&gt;Git hooks&lt;/h2&gt;
+&lt;p&gt;The real MVP however is &lt;a href=&#34;https://git-scm.com/docs/githooks&#34;&gt;Git Hooks&lt;/a&gt;.
+Hooks are scripts that run automatically on certain Git events.&lt;/p&gt;
+&lt;p&gt;I did, for example, create a hook to automacally build the website after commiting a change.
+Yes, this could introduce problems such as breaking changes and I end up with a broken website, but as I test it regularly this should not become a problem.&lt;/p&gt;
+&lt;p&gt;The second hook I created pushes the website to the FTP server whenever I push to the remote repository.&lt;/p&gt;
+&lt;h2 id=&#34;git-submodule&#34;&gt;Git submodule&lt;/h2&gt;
+&lt;p&gt;I recently discovered that I can use &lt;code&gt;git submodule&lt;/code&gt; to add the &lt;code&gt;public&lt;/code&gt; folder created by Hugo.
+This allows me to upload the repository to my pages repository on Codeberg and have the site mirrored there.
+Secoundly, it allows me to upload the website with git-ftp without uploading everything else.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;What awesome features of Git are you using?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Geheime Botschaften – Simon Singh</title>
+      <link>https://jankremer.eu/blog/geheime-botschaften/</link>
+      <pubDate>2023-09-09 00:00</pubDate>
+      
+      <guid>https://jankremer.eu/blog/geheime-botschaften/</guid>
+      <description>&lt;p&gt;Ich las vor kurzem das Buch &lt;em&gt;Geheime Botschaften. Die Kunst der Verschlüsselung von der Antike bis in die Zeiten des Internet&lt;/em&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; von &lt;a href=&#34;https://simonsingh.net&#34;&gt;Simon Singh&lt;/a&gt;.
+Es stellt eine Einführung in die Geschichte der Verschlüsselung dar und ist für jeden, den das Thema interessiert, äußerst empfehlenswert.
+Daneben geht der Autor auch auf die &amp;ldquo;Entschlüsselung&amp;rdquo; antiker Sprachen wie der &lt;a href=&#34;https://de.wikipedia.org/wiki/Hieroglyphen&#34;&gt;Hieroglyphen&lt;/a&gt; und Schriften wie &lt;a href=&#34;https://de.wikipedia.org/wiki/Linearschrift_B&#34;&gt;Linear B&lt;/a&gt; ein.&lt;/p&gt;
+&lt;p&gt;In den letzten Kapiteln des Buchs erklärt Singh zudem &amp;ldquo;moderne&amp;rdquo; Verschlüsselungsmethoden wie &lt;a href=&#34;https://de.wikipedia.org/wiki/RSA-Kryptosystem&#34;&gt;RSA&lt;/a&gt; und den &lt;a href=&#34;https://de.wikipedia.org/wiki/Diffie-Hellman-Schl%C3%BCsselaustausch&#34;&gt;Diffie-Hellmann-Schlüsselaustausch&lt;/a&gt;.
+Nur leider zeigt sich hier deutlich, dass das Buch bereit 1999 publiziert wurde und somit die letzten 24 Jahre der Kryptographie nicht erwähnt werden konnten.
+Dadurch finden sich Themen wie zum Beispiel das &lt;a href=&#34;https://www.signal.org/docs/&#34;&gt;Signal-Protokoll&lt;/a&gt;, die damit einhergehende massive Verbreitung starker Verschlüsselung und Krypto-Währungen hier nicht wieder.&lt;/p&gt;
+&lt;p&gt;Zum Glück kann man vieles davon selbst im Internet recherchieren.&lt;/p&gt;
+&lt;p&gt;Update: Signal wird in Zukunft &lt;a href=&#34;https://signal.org/blog/pqxdh&#34;&gt;quantumresistente Verschlüsselung&lt;/a&gt; benutzen.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Originaltitel: &lt;em&gt;The Code Book. The Science of Secrecy from Ancient Egypt to Quantum Cryptography&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RSS</title>
+      <link>https://jankremer.eu/blog/rss/</link>
+      <pubDate>2023-09-01 00:00</pubDate>
+      
+      <guid>https://jankremer.eu/blog/rss/</guid>
+      <description>&lt;h2 id=&#34;what-is-rss&#34;&gt;What is RSS?&lt;/h2&gt;
+&lt;p&gt;Originally, RSS stood for &amp;ldquo;RDF/Rich Site Summary&amp;rdquo; but was later changed to &amp;ldquo;Really Simple Syndication&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;RSS is a way to subscribe to a website.
+Whenever that website updates it writes its changes to a &lt;code&gt;XML&lt;/code&gt; file.
+You can then read this XML file and see what changed at a glance.&lt;/p&gt;
+&lt;p&gt;Many websites use RSS including YouTube, &lt;del&gt;Reddit&lt;/del&gt; Lemmy, &lt;del&gt;Twitter&lt;/del&gt; Mastodon, most news sites, and almost any blog out there.
+For many blogs, RSS is the main way to distribute new posts.&lt;/p&gt;
+&lt;p&gt;RSS is experiencing a Renaissance at the moment:
+Many people are now seeing the damages done by algorithmic feeds and want to go back to purely chronological feeds.
+RSS provides a perfect infrastructure for this.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-read-rss&#34;&gt;How to read RSS?&lt;/h2&gt;
+&lt;p&gt;First, you need a feed reader. On macOS and iOS I highly recommend &lt;a href=&#34;https://netnewswire.com&#34;&gt;NetNewsWire&lt;/a&gt;.
+For terminal fans &lt;a href=&#34;https://newsboat.org&#34;&gt;Newsboat&lt;/a&gt; is the way to go.
+&lt;a href=&#34;https://www.thunderbird.net/&#34;&gt;Thunderbird&lt;/a&gt; is also a good choice but there are tons of programs that can read RSS feeds.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s bascially it. Now you need to add some feeds and you are ready.&lt;/p&gt;
+&lt;p&gt;I recommend picking a reader that can also fetch the article without opening the browser and loading a ton of ads.&lt;/p&gt;
+&lt;p&gt;Pro tip: You can export your subscibtions to a &lt;code&gt;OPML&lt;/code&gt; file and import them into any RSS reader.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-distribute-rss&#34;&gt;How to distribute RSS?&lt;/h2&gt;
+&lt;p&gt;This is the hardest question to answer about RSS as there are endless possibilities.&lt;/p&gt;
+&lt;p&gt;The easiest way would probably be to use a service such as Mastodon that generates the feed automatically.
+If that platform isn&amp;rsquo;t for you, WordPress is a good way to host a blog.
+I read about people setting up their own scripts that automatically update the feed for new posts.&lt;/p&gt;
+&lt;p&gt;I use &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; which is a &lt;em&gt;static site generator&lt;/em&gt;.
+It generates feeds automatically but lies somewhere between WordPress and writing your own scripts in terms of how tech savvy you should be.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-find-rss&#34;&gt;How to find RSS?&lt;/h2&gt;
+&lt;p&gt;Go to a website you like, copy the URL and paste it into your RSS reader.
+Modern feed readers can find RSS feed on their own, you just have to provide a link to the site you want to subscribe to.
+If that is not the case, you could try adding &lt;code&gt;/index.xml&lt;/code&gt; to the URL.&lt;/p&gt;
+&lt;p&gt;Some sites, like this one, also link to their RSS feeds.
+Often those links are a the bottom of the website and are either marked as &lt;code&gt;RSS&lt;/code&gt;, &lt;code&gt;Feed&lt;/code&gt;, or just use the RSS logo.
+I additionally provide links to my subprojects such as my &lt;a href=&#34;https://jankremer.eu/micro&#34;&gt;microblog&lt;/a&gt; or my &lt;a href=&#34;https://jankremer.eu/fotos&#34;&gt;photos&lt;/a&gt;.
+Feel free to add them to your reader.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I think RSS is on the rise.
+It&amp;rsquo;s an old protocol that survived numerous challenges
+It provides an escape from the algorithms and large social media companies.
+It also provides a way for content creators to distribute their content on their own without any middleman.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>12 cent blog</title>
+      <link>https://jankremer.eu/blog/hosting/</link>
+      <pubDate>2023-08-27 00:00</pubDate>
+      
+      <guid>https://jankremer.eu/blog/hosting/</guid>
+      <description>&lt;p&gt;Yes, the title is correct.
+&lt;a href=&#34;https://knowyourmeme.com/photos/1191035&#34;&gt;Well, actually&lt;/a&gt; it is 0.119 € per
+month or 14.28 € for 10 years.&lt;/p&gt;
+&lt;p&gt;To be fair, it was a special offer and only covers the domain.
+Fortunately, my provider, &lt;a href=&#34;https://www.netim.com/en&#34;&gt;Netim&lt;/a&gt; has a free hosting plan with fits my needs.
+I even get email hosting with my own domain.
+There are also services like &lt;a href=&#34;https://neocities.org&#34;&gt;Neocities&lt;/a&gt; where you can host your website for free if you are willing to live with a subdomain.&lt;/p&gt;
+&lt;h2 id=&#34;why-should-i-xyz-is-free&#34;&gt;Why should I? XYZ is free!&lt;/h2&gt;
+&lt;p&gt;Yes, you can post wherever you want.
+𝕏 (formerly known as Twitter) is free&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, Mastodon is free, Facebook, Instagram, Threads, Reddit, you name them, are all free, but you are giving up your freedoms.
+Mastodon might be a little better than the rest, but ultimately you depend on the host to let you post there.
+And they can block you and delete all your data without even giving you any notice.
+I hope you have a backup.&lt;/p&gt;
+&lt;p&gt;Hosting this blog allows me to write whatever I want.
+Sure, Netim could also block me and delete my data, but since I use &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; I always have everything backed up on my system anyways.
+In a matter of hours I could be up and running on another hosting provider.&lt;/p&gt;
+&lt;p&gt;I can also use any format I want and have nearly endless possibilities to customize my blog.
+The sky is the limit.
+For example am I hosting my own &lt;a href=&#34;https://jankremer.eu/fotos&#34;&gt;photos&lt;/a&gt; instead of using Instagram and my own &lt;a href=&#34;https://jankremer.eu/micro&#34;&gt;microblog&lt;/a&gt; instead of using Twitter/Mastodon.
+Whatever media I plan to share in the future, there is a solution out there.
+Want comments? I&amp;rsquo;m trying &lt;a href=&#34;https://cactus.chat&#34;&gt;Cactus Comments&lt;/a&gt; at the moment.&lt;/p&gt;
+&lt;p&gt;Let me know what you think!&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Or is it? I&amp;rsquo;m not in the loop.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stop using Twitter.</title>
+      <link>https://jankremer.eu/micro/twitter/</link>
+      <pubDate>2023-07-22 15:57</pubDate>
+      
+      <guid>https://jankremer.eu/micro/twitter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evening Cloud</title>
+      <link>https://jankremer.eu/photos/evening-cloud/</link>
+      <pubDate>2023-07-19 10:48</pubDate>
+      
+      <guid>https://jankremer.eu/photos/evening-cloud/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;evening-cloud.webp&#34; alt=&#34;Evening cloud over Regensburg.&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Reader mode is the antidote to bad website design.</title>
+      <link>https://jankremer.eu/micro/reader/</link>
+      <pubDate>2023-07-19 10:14</pubDate>
+      
+      <guid>https://jankremer.eu/micro/reader/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://jankremer.eu/blog/git/</link>
+      <pubDate>2023-03-22 16:47</pubDate>
+      
+      <guid>https://jankremer.eu/blog/git/</guid>
+      <description>&lt;p&gt;Ursprünglich sollte es in diesem Post um &lt;a href=&#34;https://git-scm.com&#34;&gt;git&lt;/a&gt;, jedoch ist mir bei Brainstorming aufgefallen, dass das Thema eigentlich deutlich umfangreicher sein sollte.&lt;/p&gt;
+&lt;p&gt;Meine Reise begann, als ich beschloss, diesen Blog zu starten.
+Da ich bis dahin Webseiten nur in reinem HTML und CSS geschrieben hatte, versuchte ich es zunächst damit.
+Schnell stellten sich dabei aber mehrere Probleme heraus:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ich bin nicht gut in CSS.&lt;/li&gt;
+&lt;li&gt;Einen RSS-Feed von Hand zu erstellen ist umständlich und nicht sinnvoll.&lt;/li&gt;
+&lt;li&gt;Mehrere Seiten mit einheitlichem Design in HTML zu schreiben ist kompliziert.&lt;/li&gt;
+&lt;li&gt;Ich mag die HTML Syntax nicht.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ich war überzeugt, dass ich eine bessere Lösung dafür brauche.
+Nach kurzer und intensiver Recherche fand ich heraus, dass die Lösung meine Problems &lt;em&gt;&amp;ldquo;static site generator&amp;rdquo;&lt;/em&gt; heißt.
+Darüber hatte ich bereits &lt;a href=&#34;https://jankremer.eu/blog/genesis&#34;&gt;hier&lt;/a&gt; geschrieben.&lt;/p&gt;
+&lt;p&gt;Im Zuge dessen lernte ich auch &lt;em&gt;git&lt;/em&gt; kennen.
+Ich hatte zwar schon früher von &lt;em&gt;git&lt;/em&gt; gehört, bis dato aber nur zum herunterladen von Software benutzt.
+Und damit sind wir schon im Kern meines Problems gelandet:&lt;/p&gt;
+&lt;h2 id=&#34;warum-kannte-ich-git-nicht&#34;&gt;Warum kannte ich &lt;em&gt;git&lt;/em&gt; nicht?&lt;/h2&gt;
+&lt;p&gt;Meine ersten Erfahrungen mit dem Programmieren machte ich damals in der Schule, angefangen mit HTML und CSS, später mit Python und Java.
+Aber ohne &lt;em&gt;git&lt;/em&gt;.
+An der Uni (4 Semester Wirtschaftsinformatik) ging es dann weiter mit Java, aber weiterhin ohne &lt;em&gt;git&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Erst beim erstellen dieses Blogs kam ich auf die Idee mich mal ein wenig mit &lt;a href=&#34;https://de.wikipedia.org/wiki/Versionsverwaltung&#34;&gt;Versionsverwaltung&lt;/a&gt; auseinander zu setzen.
+Und seitdem bin ich verliebt.&lt;/p&gt;
+&lt;p&gt;Inzwischen denke ich, dass jeder von &lt;em&gt;git&lt;/em&gt; profitieren könnte.
+Das einfache Zurückspringen zu früheren Versionen, falls mal was kaputt geht, oder das Auslagern und Zusammenführen von &lt;em&gt;Branches&lt;/em&gt; sind einfach großartig.
+Zudem ermutigt wird man ermutigt, an logisch sinnvollen Stellen zu &lt;em&gt;commiten&lt;/em&gt; und somit den bisherigen Stand zu speichern.&lt;/p&gt;
+&lt;p&gt;Es wäre meiner Meinung nach auch sinnvoll, Texte, wie zum Beispiel Projektarbeiten, nicht in &lt;em&gt;Microsoft Word&lt;/em&gt; zu verfassen sondern besser in Textdokumenten und diese dann mit &lt;em&gt;git&lt;/em&gt; zu verwalten und zusammenzufügen (merge).
+Diese könnten dann ganz leicht in &lt;a href=&#34;https://jankremer.eu/blog/latex&#34;&gt;LaTeX-Dokumente&lt;/a&gt; umgewandelt werden oder auch in &lt;em&gt;Word&lt;/em&gt; formatiert werden.
+Darüber hinaus würde dies den Autoren die Möglichkeit geben, einen Texteditor der Wahl zu nutzen.
+Gerade auf älteren Maschinen, wie meinem &lt;em&gt;MacBook Pro&lt;/em&gt; von 2015 braucht &lt;em&gt;Word&lt;/em&gt; inzwischen einiges an Ressourcen.
+Dies könnte aber auch damit zusammen hängen, dass &lt;em&gt;Word&lt;/em&gt; auf meinem Computer stolze 2.3 GB schwer ist.
+Zum Vergleich: Das &lt;strong&gt;gesamte&lt;/strong&gt; &lt;em&gt;LibreOffice&lt;/em&gt; braucht keine 800 MB.&lt;/p&gt;
+&lt;p&gt;Ich verstehe auch, dass nicht jeder auf der Kommandozeile zu Hause ist, jedoch gibt es ja auch Tools wie GitHub oder Programme mit grafischer Oberfläche, es sollte also für jeden was dabei sein.&lt;/p&gt;
+&lt;p&gt;Ich kratze hier gerade mal an der Oberfläche der Möglichkeiten, das meiste ist mir selbst noch nicht bekannt.
+Ich kann nur jedem, der &lt;em&gt;git&lt;/em&gt; noch nicht nutzt es nur wärmstens empfehlen, es mal auszuprobieren.
+Schaden kann es nicht!&lt;/p&gt;
+&lt;p&gt;P.S.: Ja ich weiß, &lt;em&gt;git&lt;/em&gt; ist kein Geheimtipp.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>LaTeX</title>
+      <link>https://jankremer.eu/blog/latex/</link>
+      <pubDate>2023-01-12 15:35</pubDate>
+      
+      <guid>https://jankremer.eu/blog/latex/</guid>
+      <description>&lt;p&gt;Im Rahmen meines Wahlpflichtpraktikums schreibe ich aktuell an meiner zweiten größeren Projektarbeit. Die einzige andere Projektarbeit war bisher die für das Praktikum Pharmazeutische Technologie, welche, Stand jetzt, noch nicht vollständig abgeschlossen ist.&lt;/p&gt;
+&lt;p&gt;Für diese Arbeit entschieden wir uns jedoch für &lt;em&gt;Microsoft Word&lt;/em&gt;. Also im Grunde wurde uns diese Entscheidung fast abgenommen, da die Universität Regensburg uns das &lt;em&gt;Office 365&lt;/em&gt; zur Verfügung stellt und es damit auch bei uns Studenten den De-Facto-Standard darstellt. Zudem erleichtert es das Arbeiten im Team doch sehr.&lt;/p&gt;
+&lt;p&gt;Formatierungen sind jedoch immer ein Kampf. Daher wollte ich versuchen, &lt;a href=&#34;https://www.latex-project.org&#34;&gt;LaTeX&lt;/a&gt; für diese Arbeit einzusetzen. Ich kannte &lt;em&gt;LaTeX&lt;/em&gt; vor allem aus mathematischen Kursen an der Uni und hatte schon oft gehört, dass es Setzen (von &lt;a href=&#34;https://de.wikipedia.org/wiki/Satz_(Druck)&#34;&gt;Satz&lt;/a&gt;) deutlich vereinfachen soll. Aber nicht nur das Schreiben mathematischer Arbeiten macht es deutlich angenehmer, durch das einbinden einiger zusätzlicher Pakete werden wissenschaftliche Texte zum Kinderspiel.&lt;/p&gt;
+&lt;h2 id=&#34;über-latex&#34;&gt;Über LaTeX&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;LaTeX&lt;/strong&gt; [ˈlaːtɛç] ist ein Softwarepaket, das die Benutzung des Textsatzsystems TeX mit Hilfe von Makros vereinfacht. &lt;em&gt;LaTeX&lt;/em&gt; wurde Anfang der 1980er Jahre von &lt;em&gt;Leslie Lamport&lt;/em&gt; entwickelt.Der Name bedeutet so viel wie &lt;em&gt;Lamport TeX&lt;/em&gt;. Die Entwicklung wurde seit den 1990er Jahren von einer Anzahl Entwicklern weitergeführt. Heute ist &lt;em&gt;LaTeX&lt;/em&gt; die populärste Methode, &lt;em&gt;TeX&lt;/em&gt; zu verwenden.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;— &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;https://de.wikipedia.org/wiki/LaTeX&#34;&gt;Wikipedia: LaTeX&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;LaTeX&lt;/em&gt; funktioniert ähnlich wie &lt;em&gt;HTML&lt;/em&gt; oder &lt;em&gt;Markdown&lt;/em&gt;: Zunächst wird die Formatierung von Text getrennt. Bei WYSIWYG&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;-Textverarbeitungsprogrammen wie &lt;em&gt;Word&lt;/em&gt; sieht man direkt, wie das gedruckte Dokument hinterher aussehen wird. Das macht es für viele Nutzer einfacher, zwingt sie aber auch dazu, sich direkt und unmittelbar mit der Formatierung zu beschäftigen. &lt;em&gt;LaTeX&lt;/em&gt; trennt dies zunächst, gibt aber dennoch eine übersichtliche Struktur vor. Zudem sind die Standard Formatvorlagen deutlich schlichter und zumindest für mich wesentlich ansprechender als die von &lt;em&gt;Word&lt;/em&gt; (Warum ist alles blau und wieso &lt;em&gt;Calibri&lt;/em&gt;?!). Ja, die Voreinstellungen von &lt;em&gt;Word&lt;/em&gt; lassen sich überschreiben, aber das muss man auch erstmal machen.&lt;/p&gt;
+&lt;p&gt;Funktionen wie ein Inhalts- oder Literaturvrezeichnis lassen sich in &lt;em&gt;Word&lt;/em&gt; zwar auch realisieren, sind in &lt;em&gt;LaTeX&lt;/em&gt; wesentlich simpler. Zudem lässt sich &lt;em&gt;LaTeX&lt;/em&gt; durch Pakete nahezu unendlich erweitern und deckt dadruch auch jeden noch so speziellen Fall ab.&lt;/p&gt;
+&lt;p&gt;Ein weiterer Punkt, warum ich &lt;em&gt;LaTeX&lt;/em&gt; bevorzuge ist, dass ich jeden Texteditor benutzen kann. Ich nutze am liebsten &lt;em&gt;VS Code&lt;/em&gt;, aber natürlich kann jeder beliebige Editor verwendet werden.&lt;/p&gt;
+&lt;p&gt;Das einzige, was mit &lt;em&gt;Word&lt;/em&gt; sicher einfacher wäre ist das einbinden und beschriften von Grafiken. Da ich einige davor in meine Projektarbeit verwende, brauchte ich hierfür eine Lösung. Diese habe ich mit &lt;a href=&#34;https://inkscape.org/de/&#34;&gt;Inkscape&lt;/a&gt; gefunden. Hiermir lassen sich Bilder bearbeiten und beschriften und anschließend als &lt;em&gt;LaTeX&lt;/em&gt;-Dokument speichern. Diese lassen sich dann ganz einfach einbinden.&lt;/p&gt;
+&lt;h2 id=&#34;fazit&#34;&gt;Fazit&lt;/h2&gt;
+&lt;p&gt;Für wen &lt;em&gt;Word&lt;/em&gt; und ähnliches schon immer eine Qual war oder wer Vorerfahrung mit Texteditoren und Skriptsprachen hat, dem kann ich &lt;em&gt;LaTeX&lt;/em&gt; nur ans Herz legen. Ganz einfach lassen sich wunderschöne Dokumente herzaubern. Vor allem der Font &lt;em&gt;Computer Modern&lt;/em&gt; hat es mir sehr angetan. Eventuell werde ich die Projektarbeit demnächst hier hochladen.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;technische-spezifikationen&#34;&gt;Technische Spezifikationen&lt;/h2&gt;
+&lt;p&gt;Kurzer Nachtrag über meine Arbeitsweise mit &lt;em&gt;LaTeX&lt;/em&gt;: Als Texteditor benutze ich &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;VS Code&lt;/a&gt;, da ich diesen super übersichtlich finde und vor allem die Erweiterungsmöglichkeiten sehr schätze. Für &lt;em&gt;LaTeX&lt;/em&gt; sind dies vor allem &lt;a href=&#34;https://github.com/James-Yu/LaTeX-Workshop&#34;&gt;LaTeX Workshop&lt;/a&gt; und natürlich &lt;a href=&#34;https://git-scm.com&#34;&gt;git&lt;/a&gt; (vorinstalliert). Des Weiteren benutze ich die &lt;a href=&#34;https://www.tug.org/mactex/&#34;&gt;MacTeX-Distribution&lt;/a&gt;, welche ich über &lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt; installiert habe.&lt;/p&gt;
+&lt;h3 id=&#34;verwendete-pakete&#34;&gt;Verwendete Pakete&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;babel&lt;/strong&gt;: Sorgt für die Unterstützung verschiedener Sprachen. Ich schreibe die Projektarbeit zwar auf Englisch, jedoch brauche ich ab und zu mal Deutsche Begriffe und damiteinhergehend Umlaute etc.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;biblatex&lt;/strong&gt;: Verbessertes Literaturverzeichnis, alternative zu &lt;strong&gt;bibtex&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;booktabs&lt;/strong&gt;: Verschönert und vereinfacht Tabellen in &lt;em&gt;LaTeX&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;chemformula&lt;/strong&gt;: Erleichtert das Setzen von chemischen Formeln enorm und sorgt dafür, dass diese auch richtig angezeigt werden.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;hyperref&lt;/strong&gt;: Für Links und Metadaten.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;longtable&lt;/strong&gt;: Die verwendeten Materialien habe ich alle in riesigen Listen. &lt;em&gt;LaTeX&lt;/em&gt; kann standardmäßig nicht besonders gut mit großen Tabellen umgehen, dieses Paket hilft dabei.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;microtype&lt;/strong&gt;: Lässt alles schöner aussehen, praktisch schwarze Magie.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;siunitx&lt;/strong&gt;: Das wahrscheinlich beste Paket überhaupt, simple aber hat Power. Sorgt für perfektes setzen von Einheiten, mit oder ohne vorangehenden Wert. Zudem enthält es eine Funktion, die Werte in Tabellen um den Dezimalpunkt anordnen kann. Ein Traum.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;textgreek&lt;/strong&gt;: Erleichtert das verwenden von griechischen Buchstaben im Text.&lt;/li&gt;
+&lt;li&gt;Zusätzliche Pakete die ich an der Stelle nicht weiter erleutern werden: &lt;strong&gt;color&lt;/strong&gt;, &lt;strong&gt;csquotes&lt;/strong&gt;, &lt;strong&gt;fontenc&lt;/strong&gt;, &lt;strong&gt;glossaries&lt;/strong&gt;, &lt;strong&gt;graphicx&lt;/strong&gt;, &lt;strong&gt;tikz&lt;/strong&gt; und &lt;strong&gt;tocbibind&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;What you see is what you get.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bitcoin</title>
+      <link>https://jankremer.eu/btc/</link>
+      <pubDate>2022-12-10 00:00</pubDate>
+      
+      <guid>https://jankremer.eu/btc/</guid>
+      <description>&lt;h2 id=&#34;address&#34;&gt;Address&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bc1qf8qjt4gut2la8k4v3emfv7wrj6f3pfcjrj3slplnwrldkz7hqmaqaju7ym
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;qr&#34;&gt;QR&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://jankremer.eu/btc.png&#34; alt=&#34;BTC&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;openalias&#34;&gt;OpenAlias&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jankremer.eu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;btc.jankremer.eu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ethereum</title>
+      <link>https://jankremer.eu/eth/</link>
+      <pubDate>2022-12-10 00:00</pubDate>
+      
+      <guid>https://jankremer.eu/eth/</guid>
+      <description>&lt;h2 id=&#34;address&#34;&gt;Address&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;0xc4cBDf9f57cb0229d19d885D5E4033a6223EDef7
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;qr&#34;&gt;QR&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://jankremer.eu/eth.png&#34; alt=&#34;ETH&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ens&#34;&gt;ENS&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jankremer.eu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;opensea&#34;&gt;OpenSea&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://opensea.io/Echinacea&#34;&gt;Echinacea&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Genesis</title>
+      <link>https://jankremer.eu/blog/genesis/</link>
+      <pubDate>2022-12-10 00:00</pubDate>
+      
+      <guid>https://jankremer.eu/blog/genesis/</guid>
+      <description>&lt;p&gt;Als ich vor ca. einem Jahr diese Domain kaufte, wusste ich noch nicht was ich damit anstellen will. Ich wusste nur: &lt;strong&gt;Ich will endlich eine eigene Webseite haben.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In meinen ersten Stunden Informatik in der Schule (vor über 10 Jahren) lernten wir die Grundlagen des Webdesigns mit &lt;em&gt;HTML&lt;/em&gt; und &lt;em&gt;CSS&lt;/em&gt;, und da ich zunächst nicht viel Zeit hatte erstellte ich genau mit diesen Tools eine kleine Startseite. Mehr schlecht als recht aber immerhin hatte ich etwas.&lt;/p&gt;
+&lt;p&gt;Im März diesen Jahres hatte ich dann ein wenig Zeit mich genauer mit dem Thema zu beschäftigen und fand dabei den sogenannten &lt;a href=&#34;https://jamstack.org&#34;&gt;Jamstack&lt;/a&gt;. Jamstack sind Tools zur schnellen und einfachen Aufstellen von Webseite. Dies können große Projekte sein oder wie in meinem Fall ein kleiner Blog. Zuerst probierte ich &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; was mir jedoch nicht so gut taugte und stieß dann auf &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. Mit einer Vielzahl an modernen Designs und einer klinderleichten Handhaben konnte ich schnell überzeugt werden.&lt;/p&gt;
+&lt;p&gt;Heute weiß ich zwar immer noch nicht, was ich hiermit in Zukunft machen werde, aber ich denke es ist wichtiger den je ein Sprachrohr zu haben, das unabhängig ist von der Willkür großer Plattformen.&lt;/p&gt;
+&lt;p&gt;Bis bald und viel Spaß!&lt;/p&gt;
+&lt;p&gt;P.S.: Dieses wunderschöne &lt;em&gt;Theme&lt;/em&gt;, das ich hier benutze, heißt &lt;a href=&#34;https://git.io/hugo-congo&#34;&gt;Congo&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Monero</title>
+      <link>https://jankremer.eu/xmr/</link>
+      <pubDate>2022-12-10 00:00</pubDate>
+      
+      <guid>https://jankremer.eu/xmr/</guid>
+      <description>&lt;h2 id=&#34;address&#34;&gt;Address&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;83ZtE7cBnsyTmBb5A79aDm637mCKWKuhGZZ3ZaQvjmpA5qwL6sejWEcKQnXF5Qd3N4XNCp4fbouTi9kUi8vNgPrfDQaEBMZ
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;qr&#34;&gt;QR&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://jankremer.eu/xmr.png&#34; alt=&#34;XMR&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;openalias&#34;&gt;OpenAlias&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jankremer.eu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xmr.jankremer.eu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Über mich</title>
+      <link>https://jankremer.eu/about/</link>
+      <pubDate>2022-12-10 00:00</pubDate>
+      
+      <guid>https://jankremer.eu/about/</guid>
+      <description>&lt;p&gt;Mein Name ist Jan Kremer. Ich bin 27 Jahre alt und studiere Pharmazie an der Uni Regensburg. Manchmal schreibe ich über Technik und Software &lt;a href=&#34;https://jankremer.eu/uses&#34;&gt;die ich benutze&lt;/a&gt; oder &lt;a href=&#34;https://jankremer.eu/now&#34;&gt;was ich gerade mache&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Wenn ich nicht gerade lerne, mache ich gerne Sport, vor allem Joggen, Kraftsport und Skifahren.&lt;/p&gt;
+&lt;h2 id=&#34;kontakt&#34;&gt;Kontakt&lt;/h2&gt;
+&lt;h3 id=&#34;matrix&#34;&gt;Matrix&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://matrix.to/#/@jankremer:matrix.org&#34;&gt;@jankremer:matrix.org&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ipfs&#34;&gt;IPFS&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;QmfPgBDRMVsAcdZuK26v5fxGBcUixyYqeibArBf5YYguz2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

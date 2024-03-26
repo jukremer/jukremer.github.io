@@ -1,0 +1,31 @@
+baseURL = 'https://jankremer.eu/'
+languageCode = 'de'
+title = 'Jan Kremer'
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Blog'
+pageRef = '/blog'
+weight = 20
+
+[[menus.main]]
+name = 'Microblog'
+pageRef = '/micro'
+weight = 30
+
+[[menus.main]]
+name = 'Fotos'
+pageRef = '/photos'
+weight = 40
+
+[[menus.main]]
+name = 'Über mich'
+pageRef = '/about'
+weight = 50
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]

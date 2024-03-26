@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fotos on Jan Kremer</title>
+    <link>https://jankremer.eu/photos/</link>
+    <description>Recent content in Fotos on Jan Kremer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>2023-07-19 10:48</lastBuildDate><atom:link href="https://jankremer.eu/photos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Evening Cloud</title>
+      <link>https://jankremer.eu/photos/evening-cloud/</link>
+      <pubDate>2023-07-19 10:48</pubDate>
+      
+      <guid>https://jankremer.eu/photos/evening-cloud/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;evening-cloud.webp&#34; alt=&#34;Evening cloud over Regensburg.&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

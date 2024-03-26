@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Deploy a website using Git | Jan Kremer</title>
+
+<link rel="stylesheet" href="/css/main.min.44d337144c40b1101874ef25bbc4d48bb4bb38e7cdd285c9396c8dfa51b92d03.css" integrity="sha256-RNM3FExAsRAYdO8lu8TUi7S7OOfN0oXJOWyN&#43;lG5LQM=" crossorigin="anonymous">
+
+
+
+
+<script data-goatcounter="https://jankremer.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+
+
+</head>
+
+<body>
+  <header>
+    <h1 class="title"><a href="/">Jan Kremer</a></h1>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/micro/">Microblog</a>
+    </li>
+    <li>
+      <a href="/photos/">Fotos</a>
+    </li>
+    <li>
+      <a href="/about/">Über mich</a>
+    </li>
+    </ul>
+  </nav>
+
+
+  </header>
+  <main>
+    
+<article>
+  
+  
+  <time datetime="2023-09-25T00:00:00&#43;00:00">2023-09-25</time>
+  <br>
+
+  <h1>Deploy a website using Git</h1>
+
+  <p class="lead"></p>
+
+  <h2 id="git-ftp">Git-ftp</h2>
+<p>I tested a lot of different FTP programs including GUIs, TUIs and CLIs.
+There might be a problem with the FTP server but I don&rsquo;t control that unfortunately.
+The only program working flawlessly so far is <a href="https://git-ftp.github.io/">git-ftp</a>, a plugin for Git.
+Not only is this perfectly integrated into git, which I am using anyway.
+Also no errors occurred so far.
+Plus I can automate the upload using <a href="#git-hooks">hooks</a>.</p>
+<h2 id="git-hooks">Git hooks</h2>
+<p>The real MVP however is <a href="https://git-scm.com/docs/githooks">Git Hooks</a>.
+Hooks are scripts that run automatically on certain Git events.</p>
+<p>I did, for example, create a hook to automacally build the website after commiting a change.
+Yes, this could introduce problems such as breaking changes and I end up with a broken website, but as I test it regularly this should not become a problem.</p>
+<p>The second hook I created pushes the website to the FTP server whenever I push to the remote repository.</p>
+<h2 id="git-submodule">Git submodule</h2>
+<p>I recently discovered that I can use <code>git submodule</code> to add the <code>public</code> folder created by Hugo.
+This allows me to upload the repository to my pages repository on Codeberg and have the site mirrored there.
+Secoundly, it allows me to upload the website with git-ftp without uploading everything else.</p>
+<hr>
+<p>What awesome features of Git are you using?</p>
+
+</article>
+
+<hr>
+<div class="tags">
+  <ul>
+    <li><a href="/tags/meta/">Meta</a></li>
+    <li><a href="/tags/git/">Git</a></li>
+  </ul>
+</div>
+
+
+  </main>
+  <footer>
+    <p><a href="https://creativecommons.org/licenses/by-sa/4.0/">BY-SA 4.0</a> &emsp; ☙ &emsp; Jan Kremer &emsp; ❧
+  &emsp; 2021–2024</p>
+
+  </footer>
+</body>
+
+</html>

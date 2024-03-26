@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rss on Jan Kremer</title>
+    <link>https://jankremer.eu/tags/rss/</link>
+    <description>Recent content in Rss on Jan Kremer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>2023-09-01 00:00</lastBuildDate><atom:link href="https://jankremer.eu/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RSS</title>
+      <link>https://jankremer.eu/blog/rss/</link>
+      <pubDate>2023-09-01 00:00</pubDate>
+      
+      <guid>https://jankremer.eu/blog/rss/</guid>
+      <description>&lt;h2 id=&#34;what-is-rss&#34;&gt;What is RSS?&lt;/h2&gt;
+&lt;p&gt;Originally, RSS stood for &amp;ldquo;RDF/Rich Site Summary&amp;rdquo; but was later changed to &amp;ldquo;Really Simple Syndication&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;RSS is a way to subscribe to a website.
+Whenever that website updates it writes its changes to a &lt;code&gt;XML&lt;/code&gt; file.
+You can then read this XML file and see what changed at a glance.&lt;/p&gt;
+&lt;p&gt;Many websites use RSS including YouTube, &lt;del&gt;Reddit&lt;/del&gt; Lemmy, &lt;del&gt;Twitter&lt;/del&gt; Mastodon, most news sites, and almost any blog out there.
+For many blogs, RSS is the main way to distribute new posts.&lt;/p&gt;
+&lt;p&gt;RSS is experiencing a Renaissance at the moment:
+Many people are now seeing the damages done by algorithmic feeds and want to go back to purely chronological feeds.
+RSS provides a perfect infrastructure for this.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-read-rss&#34;&gt;How to read RSS?&lt;/h2&gt;
+&lt;p&gt;First, you need a feed reader. On macOS and iOS I highly recommend &lt;a href=&#34;https://netnewswire.com&#34;&gt;NetNewsWire&lt;/a&gt;.
+For terminal fans &lt;a href=&#34;https://newsboat.org&#34;&gt;Newsboat&lt;/a&gt; is the way to go.
+&lt;a href=&#34;https://www.thunderbird.net/&#34;&gt;Thunderbird&lt;/a&gt; is also a good choice but there are tons of programs that can read RSS feeds.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s bascially it. Now you need to add some feeds and you are ready.&lt;/p&gt;
+&lt;p&gt;I recommend picking a reader that can also fetch the article without opening the browser and loading a ton of ads.&lt;/p&gt;
+&lt;p&gt;Pro tip: You can export your subscibtions to a &lt;code&gt;OPML&lt;/code&gt; file and import them into any RSS reader.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-distribute-rss&#34;&gt;How to distribute RSS?&lt;/h2&gt;
+&lt;p&gt;This is the hardest question to answer about RSS as there are endless possibilities.&lt;/p&gt;
+&lt;p&gt;The easiest way would probably be to use a service such as Mastodon that generates the feed automatically.
+If that platform isn&amp;rsquo;t for you, WordPress is a good way to host a blog.
+I read about people setting up their own scripts that automatically update the feed for new posts.&lt;/p&gt;
+&lt;p&gt;I use &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; which is a &lt;em&gt;static site generator&lt;/em&gt;.
+It generates feeds automatically but lies somewhere between WordPress and writing your own scripts in terms of how tech savvy you should be.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-find-rss&#34;&gt;How to find RSS?&lt;/h2&gt;
+&lt;p&gt;Go to a website you like, copy the URL and paste it into your RSS reader.
+Modern feed readers can find RSS feed on their own, you just have to provide a link to the site you want to subscribe to.
+If that is not the case, you could try adding &lt;code&gt;/index.xml&lt;/code&gt; to the URL.&lt;/p&gt;
+&lt;p&gt;Some sites, like this one, also link to their RSS feeds.
+Often those links are a the bottom of the website and are either marked as &lt;code&gt;RSS&lt;/code&gt;, &lt;code&gt;Feed&lt;/code&gt;, or just use the RSS logo.
+I additionally provide links to my subprojects such as my &lt;a href=&#34;https://jankremer.eu/micro&#34;&gt;microblog&lt;/a&gt; or my &lt;a href=&#34;https://jankremer.eu/fotos&#34;&gt;photos&lt;/a&gt;.
+Feel free to add them to your reader.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I think RSS is on the rise.
+It&amp;rsquo;s an old protocol that survived numerous challenges
+It provides an escape from the algorithms and large social media companies.
+It also provides a way for content creators to distribute their content on their own without any middleman.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
