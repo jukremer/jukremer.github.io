@@ -33,7 +33,10 @@
       <pubDate>{{ .Date.Format "2006-01-02 15:04" | safeHTML }}</pubDate>
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Content | html }}</description>
+      <description>
+        <p><strong>{{ .Description | html }}</strong></p>
+        {{ .Content | html }}
+        </description>
     </item>
     {{ end }}
   </channel>

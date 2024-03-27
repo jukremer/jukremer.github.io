@@ -1,6 +1,12 @@
 baseURL = 'https://jankremer.eu/'
 languageCode = 'de'
 title = 'Jan Kremer'
+copyright = 'CC-BY-SA 4.0'
+
+[params]
+[params.author]
+name = 'Jan Kremer'
+email = 'mail@jankremer.eu'
 
 [[menus.main]]
 name = 'Home'
@@ -26,6 +32,3 @@ weight = 40
 name = 'Über mich'
 pageRef = '/about'
 weight = 50
-
-[outputs]
-home = ["HTML", "RSS", "JSON"]
