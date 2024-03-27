@@ -61,6 +61,14 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.netim.hosting
+          username: AS12798_FTP1
+          password: ${{ secrets.ftp_password }}
+          local-dir: ./public/
+          server-dir: jankremer.eu/public_www/
 
   # Deployment job
   deploy:
