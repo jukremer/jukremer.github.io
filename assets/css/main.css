@@ -1,32 +1,46 @@
-@font-face {
-  font-family: "EB Garamond";
-  src:
-    /* local("EB Garamond"), */
-    url("/fonts/EBGaramond-VariableFont_wght.ttf");
-  /* font-weight: normal; */
-  /* font-style: normal; */
-  /* font-display: swap; */
-}
-
 :root {
   font-size: calc(1rem + 0.25vw);
-  --red: #FC361D;
-  --blue1: #116080;
-  --blue2: #105099;
-  --light-gray: #F0F0F0;
-  --white: white;
-  --beige: #FCF9EC;
-  --text1: #1a1a1a;
-  --text2: #6f6f6f;
-  --text3: #999999;
+  --red: oklch(65% 0.25 30);
+  --blue1: oklch(50% 0.1 230);
+  --blue2: oklch(40% 0.1 230);
+  --light-gray: oklch(95% 0 0);
+  --white1: oklch(100% 0 0);
+  --text1: oklch(20% 0 0);
+  --text2: oklch(50% 0 0);
+  --text3: oklch(70% 0 0);
+}
+
+code {
+  background: #eff1f5;
+  border-radius: 0.3em;
+  padding: 0.1em 0.2em;
+  font-size: 0.9em;
+}
+
+.highlight {
+  border-radius: 0.3rem;
+  padding: 0.5em 0.5em;
+  margin: 1rem 0;
+  background: #eff1f5;
+  overflow: auto;
+
+  & code {
+    margin: 0;
+    padding: 0;
+  }
+
+  & pre {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 body {
   color: var(--text);
   background: var(--background);
-  font-family: "eb garamond", serif;
+  font-family: "EB Garamond", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Athelas, Georgia, serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif; */
   font-variant-numeric: oldstyle-nums;
-  /* font-variant-ligatures: common-ligatures; */
   line-height: 1.5;
   margin: auto;
   padding: 1rem;
@@ -73,6 +87,10 @@ article>p:nth-of-type(2)::first-letter {
 a {
   color: var(--red);
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 h1 {
@@ -134,21 +152,18 @@ footer {
 }
 
 .list {
+  color: var(--text1);
 
   & h2 {
     margin-top: 2rem;
     margin-bottom: 0;
-
-    & a {
-      color: var(--text1);
-    }
-
   }
 
   .lead {
     margin: 0;
     font-size: 1rem;
     text-align: left;
+    text-decoration: none;
   }
 
 }

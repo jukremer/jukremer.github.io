@@ -3,15 +3,14 @@ languageCode = 'de'
 title = 'Jan Kremer'
 copyright = 'CC-BY-SA 4.0'
 
+[markup]
+[markup.highlight]
+style = "catppuccin-latte"
+
 [params]
 [params.author]
 name = 'Jan Kremer'
 email = 'mail@jankremer.eu'
-
-[[menus.main]]
-name = 'Home'
-pageRef = '/'
-weight = 10
 
 [[menus.main]]
 name = 'Blog'

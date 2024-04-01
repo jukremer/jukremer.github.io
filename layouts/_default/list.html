@@ -1,14 +1,16 @@
 {{ define "main" }}
 {{ .Content }}
 {{ range .Pages }}
-<div class="list">
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format "2006-01-02" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+<a href="{{ .RelPermalink }}" style="display:block">
+  <div class="list">
+    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $dateHuman := .Date | time.Format "2006-01-02" }}
+    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
 
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <h2>{{ .Title }}</h2>
 
-  <p class="lead">{{ .Description }}</p>
-</div>
+    <p class="lead">{{ .Description }}</p>
+  </div>
+</a>
 {{ end }}
 {{ end }}
