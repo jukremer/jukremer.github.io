@@ -27,5 +27,5 @@ tags:
 | Text editor             | [Neovim](https://neovim.io), [Helix](https://helix-editor.com) |
 | Word processing         | [Typst](https://typst.app)                                     |
 | Window manager          | [Amethyst](https://github.com/ianyh/Amethyst)                  |
-| Terminal emulator       | [Kitty](https://sw.kovidgoyal.net/kitty)                       |
-| Package manager         | [Nix](https://nixos.org), [Homebrew](https://brew.sh)          |
+| Terminal emulator       | [Ghostty](https://github.com/mitchellh/ghostty)                |
+| Package manager         | [Nix](https://nixos.org) ([Homebrew](https://brew.sh))         |
