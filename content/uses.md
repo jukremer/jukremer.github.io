@@ -29,3 +29,4 @@ tags:
 | Window manager          | [Amethyst](https://github.com/ianyh/Amethyst)                  |
 | Terminal emulator       | [Ghostty](https://github.com/mitchellh/ghostty)                |
 | Package manager         | [Nix](https://nixos.org) ([Homebrew](https://brew.sh))         |
+| Color theme             | [Rosé Pine](https://rosepinetheme.com)                         |
