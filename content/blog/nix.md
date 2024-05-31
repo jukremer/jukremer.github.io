@@ -4,7 +4,6 @@ date: 2024-03-14
 description: Moving from Homebrew to Nix. Mostly.
 tags:
 - nix
-showComments: false
 ---
 For about a year, I've been fascinated by [Nix and NixOS](https://nixos.org). I don't remember exactly what fascinated me at first, probably the possibility to setup and configure my system using a single file. A few weeks ago, I decided to give it a serious try.
 

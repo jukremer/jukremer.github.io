@@ -5,6 +5,5 @@ description:
 feature:
 tags:
   - photos
-showComments: false
 draft: true
 ---

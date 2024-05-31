@@ -3,7 +3,6 @@ title: "Easter eggs of this Websites"
 date: 2023-09-19
 description: "What you can't see is what you GET."
 tags: [meta]
-showComments: true
 draft: true
 ---
 ## .well_known
@@ -39,7 +38,3 @@ I think you need to use a [nerd font](https://nerdfonts.com) for the QR code to 
 > Why?
 
 Just for fun.
-
-## More?
-
-What am I missing? Tell me in the comments or via [email](/about#kontakt).
