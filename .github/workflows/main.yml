@@ -24,26 +24,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: 'latest'
-          # extended: true
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: recursive
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+      - name: Setup Nix
+        uses: DeterminateSystems/nix-installer-action@main
       - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
         run: |
-          hugo \
+          nix develop --command bash -c "hugo \
+            --environment production \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL '${{ steps.pages.outputs.base_url }}/'"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

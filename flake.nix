@@ -20,7 +20,8 @@
           default =
             with pkgs;
             mkShell {
-              nativeBuildInputs = with pkgs; [
+              name = "Hugo website";
+              packages = with pkgs; [
                 go
                 hugo
               ];
