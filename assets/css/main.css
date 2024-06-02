@@ -8,20 +8,21 @@
   --text1: oklch(20% 0 0);
   --text2: oklch(50% 0 0);
   --text3: oklch(70% 0 0);
+  --code-bg: #faf3eb;
 }
 
 code {
-  background: #faf4ed;
+  background: var(--code-bg);
   border-radius: 0.3em;
   padding: 0.1em 0.2em;
   font-size: 0.9em;
 }
 
 .highlight {
+  background: var(--code-bg);
   border-radius: 0.3rem;
   padding: 0.5em 0.5em;
   margin: 1rem 0;
-  background: #faf4ed;
   overflow: auto;
 
   & code {
