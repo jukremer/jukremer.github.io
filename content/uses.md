@@ -1,10 +1,10 @@
 ---
-title: What I use
+title: Was ich benutze
 date: 2023-12-30T08:03:20+01:00
 showDate: false
 showTOC: false
 showPagination: false
-description: "Nobody ever asked me what I'm currently using, but I decided to tell you anyway."
+description: ""
 tags:
   - meta
 ---
