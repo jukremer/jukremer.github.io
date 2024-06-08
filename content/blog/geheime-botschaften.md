@@ -4,7 +4,8 @@ date: 2023-09-09
 description: "Buchvorstellung"
 tags: [bücher]
 ---
-Ich las vor kurzem das Buch *Geheime Botschaften. Die Kunst der Verschlüsselung von der Antike bis in die Zeiten des Internet*[^1] von [Simon Singh](https://simonsingh.net).
+
+Ich las vor kurzem das Buch _Geheime Botschaften. Die Kunst der Verschlüsselung von der Antike bis in die Zeiten des Internet_[^1] von [Simon Singh](https://simonsingh.net).
 Es stellt eine Einführung in die Geschichte der Verschlüsselung dar und ist für jeden, den das Thema interessiert, äußerst empfehlenswert.
 Daneben geht der Autor auch auf die "Entschlüsselung" antiker Sprachen wie der [Hieroglyphen](https://de.wikipedia.org/wiki/Hieroglyphen) und Schriften wie [Linear B](https://de.wikipedia.org/wiki/Linearschrift_B) ein.
 
@@ -16,4 +17,4 @@ Zum Glück kann man vieles davon selbst im Internet recherchieren.
 
 Update: Signal wird in Zukunft [quantumresistente Verschlüsselung](https://signal.org/blog/pqxdh) benutzen.
 
-[^1]: Originaltitel: *The Code Book. The Science of Secrecy from Ancient Egypt to Quantum Cryptography*
+[^1]: Originaltitel: _The Code Book. The Science of Secrecy from Ancient Egypt to Quantum Cryptography_

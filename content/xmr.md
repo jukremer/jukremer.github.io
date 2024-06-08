@@ -9,6 +9,7 @@ tags: [crypto]
 searchHidden: true
 showPagination: false
 ---
+
 ## Address
 
 ```txt
@@ -23,8 +24,8 @@ showPagination: false
 
 ```txt
 jankremer.eu
-````
+```
 
 ```txt
 xmr.jankremer.eu
-````
+```

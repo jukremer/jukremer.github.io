@@ -8,6 +8,7 @@ description: ""
 tags:
   - meta
 ---
+
 ## Hardware
 
 - MacBook Pro 2015

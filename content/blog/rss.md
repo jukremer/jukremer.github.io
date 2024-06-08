@@ -4,6 +4,7 @@ date: 2023-09-01
 description: "Feeds without fuzz."
 tags: [rss, meta]
 ---
+
 ## What is RSS?
 
 Originally, RSS stood for "RDF/Rich Site Summary" but was later changed to "Really Simple Syndication"
@@ -39,7 +40,7 @@ The easiest way would probably be to use a service such as Mastodon that generat
 If that platform isn't for you, WordPress is a good way to host a blog.
 I read about people setting up their own scripts that automatically update the feed for new posts.
 
-I use [Hugo](https://gohugo.io) which is a *static site generator*.
+I use [Hugo](https://gohugo.io) which is a _static site generator_.
 It generates feeds automatically but lies somewhere between WordPress and writing your own scripts in terms of how tech savvy you should be.
 
 ## How to find RSS?

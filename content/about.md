@@ -5,6 +5,7 @@ showDate: false
 draft: false
 showPagination: false
 ---
+
 Mein Name ist Jan Kremer. Ich bin 27 Jahre alt und studiere Pharmazie an der Uni Regensburg. Manchmal schreibe ich über Technik und Software [die ich benutze](/uses).
 
 Wenn ich nicht gerade lerne, mache ich gerne Sport, vor allem Joggen, Kraftsport und Skifahren.
