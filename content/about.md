@@ -12,6 +12,14 @@ Wenn ich nicht gerade lerne, mache ich gerne Sport, vor allem Joggen, Kraftsport
 
 ## Kontakt
 
+### E-Mail
+
+[GPG key](/gpg.key)
+
+```txt
+20AF 0A65 9F2B 93AD 9184  15D1 A7DA 689C B3B0 78EC
+```
+
 ### Matrix
 
 [@jankremer:matrix.org](https://matrix.to/#/@jankremer:matrix.org)
