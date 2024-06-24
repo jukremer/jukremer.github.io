@@ -1,9 +1,12 @@
-<meta charset="UTF-8">
-<meta name="description" content="Blog von Jan Kremer">
-<meta name="keywords" content="Blog">
-<meta name="author" content="Jan Kremer">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s – %s" .Title site.Title }}{{ end }}</title>
-{{ partialCached "head/css.html" . }}
-{{ partialCached "head/js.html" . }}
-{{ partial "analytics.html" . }}
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
+<meta charset="UTF-8" />
+<meta name="description" content="Blog von Jan Kremer" />
+<meta name="keywords" content="Blog" />
+<meta name="author" content="Jan Kremer" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+  {{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s – %s" .Title
+  site.Title }}{{ end }}
+</title>
+{{ partialCached "head/css.html" . }} {{ partialCached "head/js.html" . }} {{
+partial "head/analytics.html" . }}
