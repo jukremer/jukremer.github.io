@@ -34,8 +34,8 @@
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
       <description>
-        <p><strong>{{ .Description | html }}</strong></p>
-        {{ .Content | html }}
+        <p><strong>{{ .Description | transform.XMLEscape | safeHTML }}</strong></p>
+        {{ .Content | transform.XMLEscape | safeHTML }}
         </description>
     </item>
     {{ end }}
