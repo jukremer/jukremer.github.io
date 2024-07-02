@@ -24,25 +24,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@main
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4
-      - name: Setup Nix
-        uses: DeterminateSystems/nix-installer-action@v12
+        uses: actions/configure-pages@main
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: DeterminateSystems/flake-checker-action@main
       - name: Build with Hugo
         run: |
           nix develop --command bash -c "hugo \
             --environment production \
             --minify \
             --baseURL '${{ steps.pages.outputs.base_url }}/'"
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@main
         with:
           path: ./public
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Upload to Netim FTP
+        uses: SamKirkland/FTP-Deploy-Action@main
         with:
           server: ftp.netim.hosting
           username: AS12798_FTP1
@@ -59,4 +59,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@main
