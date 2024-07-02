@@ -1,36 +1,64 @@
 {
   description = "Hugo website";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs.treefmt.url = "github:numtide/treefmt-nix";
 
   outputs =
-    { nixpkgs, ... }:
+    {
+      self,
+      nixpkgs,
+      systems,
+      treefmt,
+      ...
+    }:
     let
-      systems = [
-        "x86_64-linux"
-        "x86_64-darwin"
-      ];
-      forAllSystems = f: nixpkgs.lib.genAttrs (systems) f;
+      eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
 
-      devShell =
-        system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        {
-          default =
-            with pkgs;
-            mkShell {
-              name = "Hugo website";
-              packages = with pkgs; [
-                go
-                hugo
-                nodePackages.prettier
-              ];
-            };
-        };
+      treefmtEval = eachSystem (pkgs: treefmt.lib.evalModule pkgs ./treefmt.nix);
     in
     {
-      devShells = forAllSystems devShell;
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+      devShells = eachSystem (pkgs: {
+        default = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            go
+            hugo
+          ];
+        };
+      });
+
+      formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
+
+      checks = eachSystem (pkgs: {
+        formatting = treefmtEval.${pkgs.system}.config.build.check self;
+      });
+
+      apps = eachSystem (pkgs: {
+        default = {
+          type = "app";
+          program =
+            (pkgs.writeShellScript "build-website" ''
+              set -e
+              ${pkgs.hugo}/bin/hugo --minify
+            '').outPath;
+        };
+
+        test = {
+          type = "app";
+          program =
+            (pkgs.writeShellScript "test-website" ''
+              set -e
+              ${pkgs.hugo}/bin/hugo --environment="development"
+            '').outPath;
+        };
+
+        server = {
+          type = "app";
+          program =
+            (pkgs.writeShellScript "serve-website" ''
+              set -e
+              ${pkgs.hugo}/bin/hugo server
+            '').outPath;
+        };
+      });
     };
 }
