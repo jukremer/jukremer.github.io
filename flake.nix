@@ -19,6 +19,7 @@
     {
       devShells = eachSystem (pkgs: {
         default = pkgs.mkShell {
+          name = "Hugo website";
           buildInputs = with pkgs; [
             go
             hugo
