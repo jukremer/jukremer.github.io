@@ -3,11 +3,11 @@
 ## Links
 
 - [Webseite](https://jankremer.eu)
-- [GitHub Pages](https://janurskremer.github.io)
+- [GitHub Pages](https://jukremer.github.io)
 
 ## Git Repositorien
 
-- [GitHub](https://github.com/janurskremer/janurskremer.github.io)
+- [GitHub](https://github.com/jukremer/jukremer.github.io)
 - [Codeberg](https://codeberg.org/kremer/website)
 - [Disroot](https://https://git.disroot.org/kremer/website)
 
