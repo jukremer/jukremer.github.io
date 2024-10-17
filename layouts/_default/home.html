@@ -1,14 +1,19 @@
-{{ define "main" }} {{ .Content }} {{ $pages := .Paginate (where
-.Site.RegularPages "Type" "ne" "page") }} {{ range $pages.Pages }}
-<a href="{{ .RelPermalink }}" style="display: block">
-  <div class="list">
-    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} {{
-    $dateHuman := .Date | time.Format "2006-01-02" }}
-    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+{{ define "main" }}
+  {{ .Content }}
+  {{ $pages := .Paginate (where
+    .Site.RegularPages "Type" "ne" "page")
+  }}
+  {{ range $pages.Pages }}
+    <a href="{{ .RelPermalink }}" style="display: block">
+      <div class="list">
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format "2006-01-02" }}
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
 
-    <h2>{{ .Title }}</h2>
+        <h2>{{ .Title }}</h2>
 
-    <p class="lead">{{ .Description }}</p>
-  </div>
-</a>
-{{ end }} {{ end }}
+        <p class="lead">{{ .Description }}</p>
+      </div>
+    </a>
+  {{ end }}
+{{ end }}

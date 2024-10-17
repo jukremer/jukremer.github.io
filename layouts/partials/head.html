@@ -5,10 +5,18 @@
 <meta name="author" content="Jan Kremer" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>
-  {{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s – %s" .Title
-  site.Title }}{{ end }}
+  {{ if .IsHome }}
+    {{ site.Title }}
+  {{ else }}
+    {{ printf "%s – %s" .Title
+      site.Title
+    }}
+  {{ end }}
 </title>
-{{ partialCached "head/css.html" . }} {{ partialCached "head/js.html" . }} {{
-partial "head/analytics.html" . }} {{ with .OutputFormats.Get "rss" -}} {{
-printf `<link rel="%q" type="%q" href="%q" title="%q" />` .Rel .MediaType.Type
-.Permalink site.Title | safeHTML }} {{ end }}
+{{ partialCached "head/css.html" . }} {{ partialCached "head/js.html" . }}
+{{ partial "head/analytics.html" . }}
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel="%q" type="%q" href="%q" title="%q" />` .Rel .MediaType.Type
+    .Permalink site.Title | safeHTML
+  }}
+{{ end }}
