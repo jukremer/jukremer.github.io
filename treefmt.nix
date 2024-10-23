@@ -23,5 +23,7 @@
   settings.global.excludes = [
     "public/**"
     "static/**"
+    ".envrc"
+    "*.webp"
   ];
 }
