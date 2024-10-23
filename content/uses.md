@@ -11,7 +11,7 @@ tags:
 
 ## Hardware
 
-- M3 MacBook Air
+- MacBook Air M3 
 - iPhone X
 - Apple Watch SE
 - AirPods Pro
@@ -25,8 +25,8 @@ tags:
 | RSS reader              | [NetNewsWire](https://netnewswire.com)                 |
 | Notes                   | [Obsidian](https://obsidian.md)                        |
 | To-Do list              | [Things](https://culturedcode.com/things)              |
-| Text editor             | [Neovim](https://neovim.io)                            |
+| Text editor             | [Helix](https://helix-editor.com)                      |
 | Word processing         | [Typst](https://typst.app)                             |
 | Terminal emulator       | [Ghostty](https://github.com/mitchellh/ghostty)        |
 | Package manager         | [Nix](https://nixos.org) ([Homebrew](https://brew.sh)) |
-| Color theme             | [Rosé Pine](https://rosepinetheme.com)                 |
+| Color theme             | [Rosé Pine Moon](https://rosepinetheme.com)                 |
