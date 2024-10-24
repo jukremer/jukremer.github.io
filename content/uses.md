@@ -28,5 +28,5 @@ tags:
 | Text editor             | [Helix](https://helix-editor.com)                      |
 | Word processing         | [Typst](https://typst.app)                             |
 | Terminal emulator       | [Ghostty](https://github.com/mitchellh/ghostty)        |
-| Package manager         | [Nix](https://nixos.org) ([Homebrew](https://brew.sh)) |
-| Color theme             | [Rosé Pine Moon](https://rosepinetheme.com)            |
+| Package manager         | [Nix](https://nixos.org) + [Homebrew](https://brew.sh) |
+| Color theme             | [Rosé Pine](https://rosepinetheme.com)                 |
