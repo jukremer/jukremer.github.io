@@ -11,7 +11,7 @@ tags:
 
 ## Hardware
 
-- MacBook Air M3 
+- MacBook Air M3
 - iPhone X
 - Apple Watch SE
 - AirPods Pro
@@ -29,4 +29,4 @@ tags:
 | Word processing         | [Typst](https://typst.app)                             |
 | Terminal emulator       | [Ghostty](https://github.com/mitchellh/ghostty)        |
 | Package manager         | [Nix](https://nixos.org) ([Homebrew](https://brew.sh)) |
-| Color theme             | [Rosé Pine Moon](https://rosepinetheme.com)                 |
+| Color theme             | [Rosé Pine Moon](https://rosepinetheme.com)            |
