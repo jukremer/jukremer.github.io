@@ -21,6 +21,7 @@
     };
   };
   settings.global.excludes = [
+    "archetypes/**"
     "public/**"
     "static/**"
     ".envrc"
