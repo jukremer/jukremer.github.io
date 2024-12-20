@@ -1,13 +1,7 @@
 ---
 title: Monero
 date: 2022-12-10
-showDate: false
-showDateUpdated: false
-draft: false
-showSummary: false
 tags: [crypto]
-searchHidden: true
-showPagination: false
 ---
 
 ## Address

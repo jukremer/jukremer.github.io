@@ -1,7 +1,9 @@
 baseURL = 'https://jankremer.eu/'
-languageCode = 'de'
 title = 'Jan Kremer'
 copyright = 'CC-BY-SA 4.0'
+defaultContentLanguage = 'de'
+
+enableGitInfo = true
 
 [markup]
 [markup.highlight]

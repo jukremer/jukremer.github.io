@@ -1,13 +1,7 @@
 ---
 title: Bitcoin
 date: 2022-12-10
-showDate: false
-showDateUpdated: false
-showSummary: false
-draft: false
 tags: [crypto]
-searchHidden: true
-showPagination: false
 ---
 
 ## Address
