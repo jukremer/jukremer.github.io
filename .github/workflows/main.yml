@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
+        with:
+          submodules: true
+          fetch-depth: 0
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@main

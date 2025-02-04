@@ -47,24 +47,6 @@
               ${pkgs.hugo}/bin/hugo --minify
             '').outPath;
         };
-
-        test = {
-          type = "app";
-          program =
-            (pkgs.writeShellScript "test-website" ''
-              set -e
-              ${pkgs.hugo}/bin/hugo --environment="development"
-            '').outPath;
-        };
-
-        server = {
-          type = "app";
-          program =
-            (pkgs.writeShellScript "serve-website" ''
-              set -e
-              ${pkgs.hugo}/bin/hugo server
-            '').outPath;
-        };
       });
     };
 }
