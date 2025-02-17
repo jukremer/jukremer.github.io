@@ -1,0 +1,20 @@
+baseURL: https://jankremer.eu/
+title: Jan Kremer
+copyright: CC0 1.0
+defaultContentLanguage: de
+enableGitInfo: true
+markup:
+  highlight:
+    style: rose-pine-dawn
+params:
+  author:
+    name: Jan Kremer
+    email: mail@jankremer.eu
+menus:
+  main:
+    - name: Posts
+      pageRef: /posts
+      weight: 1
+    - name: Über mich
+      pageRef: /about
+      weight: 2

@@ -13,4 +13,4 @@
 
 ## Lizenz
 
-CC-BY-SA 4.0 \| Jan Kremer \| 2021–2025
+CC0 1.0 \| Jan Kremer \| 2021–2025
