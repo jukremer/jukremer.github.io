@@ -3,7 +3,7 @@ title: Über mich
 date: 2024-12-12
 ---
 
-Mein Name ist Jan Kremer. Ich bin 28 Jahre alt und habe Pharmazie an der Uni Regensburg studiert. Manchmal schreibe ich über Technik und Software die ich benutze.
+Mein Name ist _Jan Kremer_. Ich bin 28 Jahre alt und habe _Pharmazie_ an der Uni Regensburg studiert. Manchmal schreibe ich über Technik und Software die ich benutze.
 
 Wenn ich nicht gerade lerne, mache ich gerne Sport, vor allem Joggen, Kraftsport und Tanzen.
 

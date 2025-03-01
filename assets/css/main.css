@@ -62,8 +62,8 @@ h1 {
   text-align: center;
 }
 
-time {
-  float: top right;
+em {
+  color: var(--red);
 }
 
 table {
@@ -80,6 +80,7 @@ table {
   color: light-dark(black, white);
   font-family: var(--serif);
   font-weight: bold;
+  font-variant: normal;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,6 +98,7 @@ header {
   font-size: 1.25rem;
   font-family: var(--serif);
   font-weight: bold;
+  font-variant: small-caps;
   & nav {
     & ul {
       display: flex;
