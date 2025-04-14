@@ -121,6 +121,7 @@ a {
 
 article {
   line-height: 1.5;
+  text-wrap: pretty;
   text-align: justify;
   text-justify: inter-word;
   & img {
