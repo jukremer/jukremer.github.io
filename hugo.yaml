@@ -4,6 +4,9 @@ copyright: CC0 1.0
 defaultContentLanguage: de
 enableGitInfo: true
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     style: rose-pine-dawn
 params:

@@ -148,6 +148,14 @@ em {
   color: var(--uchu-red);
 }
 
+strong {
+  color: var(--uchu-orange);
+}
+
+abbr {
+  text-decoration-color: var(--uchu-blue);
+}
+
 table {
   border-collapse: collapse;
   width: 90%;
