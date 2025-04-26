@@ -1,6 +1,6 @@
 ---
 title: Selbsthosting
-date: 2024-12-28T07:22:14+01:00
+date: 2025-04-14
 description: Kleiner Computer, große Pläne
 tags:
   - selbsthosting
@@ -8,7 +8,7 @@ tags:
   - git
 ---
 
-Seit etwa 2020 hat mich die Idee fasziniert, meinen *eigenen Server zu betreiben* – also die volle Kontrolle über Daten, Dienste und Medien zu haben. Vor allem auf Reddit, und dort besonders in den Communities [r/selfhosted](https://www.reddit.com/r/selfhosted) und [r/homelab](https://www.reddit.com/r/homelab), habe ich immer wieder spannende Projekte gesehen. Lange blieb das für mich ein Traum – zu wenig Zeit, zu wenig Geld. Aber im April 2024 war es so weit: Mein kleines Selbsthosting-Abenteuer begann.
+Seit etwa 2020 hat mich die Idee fasziniert, meinen _eigenen Server zu betreiben_ – also die volle Kontrolle über Daten, Dienste und Medien zu haben. Vor allem auf Reddit, und dort besonders in den Communities [r/selfhosted](https://www.reddit.com/r/selfhosted) und [r/homelab](https://www.reddit.com/r/homelab), habe ich immer wieder spannende Projekte gesehen. Lange blieb das für mich ein Traum – zu wenig Zeit, zu wenig Geld. Aber im April 2024 war es so weit: Mein kleines Selbsthosting-Abenteuer begann.
 
 ## Hardware
 
@@ -68,8 +68,8 @@ Seit Januar ist mein Server abgeschaltet.
 
 Der Lüfter des Mini-PCs sowie die externe Festplatte liefen dauerhaft – das führte zu einem nicht unerheblichen **Stromverbrauch** und konstantem **Hintergrundrauschen**. Beides ließe sich vermutlich optimieren, z. B. durch bessere Energieeinstellungen oder leisere Hardware. Dazu müsste ich mich aber erst mal reinfuchsen und zudem mehr Geld ausgeben.
 
-Ein weiterer Grund: Ich habe den Server *kaum genutzt*. Meine iCloud läuft noch, Streaming mache ich momentan wenig und durch begrenztes Datenvolumen ist exzessives Streaming ohnehin keine Option.
+Ein weiterer Grund: Ich habe den Server _kaum genutzt_. Meine iCloud läuft noch, Streaming mache ich momentan wenig und durch begrenztes Datenvolumen ist exzessives Streaming ohnehin keine Option.
 
-Aber: Ich habe in den letzten 8 Monaten extrem viel gelernt – über Linux, Netzwerke, NixOS, Systemadministration, Sicherheit und mehr. Das Projekt hat mir gezeigt, wie viel man aus einem alten Mini-PC herausholen kann. Vielleicht wird der Server eines Tages reaktiviert – in neuer Form. Für den Moment war es vor allem: *ein spannendes Lernprojekt*.
+Aber: Ich habe in den letzten 8 Monaten extrem viel gelernt – über Linux, Netzwerke, NixOS, Systemadministration, Sicherheit und mehr. Das Projekt hat mir gezeigt, wie viel man aus einem alten Mini-PC herausholen kann. Vielleicht wird der Server eines Tages reaktiviert – in neuer Form. Für den Moment war es vor allem: _ein spannendes Lernprojekt_.
 
 Falls du Fragen hast oder selbst mit Selbsthosting starten willst: Schreib mir gern oder schau dir [meine Konfiguration](https://github.com/jukremer/nix-config) auf GitHub an. Vielleicht hilft dir mein Weg ja bei deinem Einstieg.

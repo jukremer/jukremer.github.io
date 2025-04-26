@@ -15,8 +15,8 @@ params:
     email: mail@jankremer.eu
 menus:
   main:
-    - name: Posts
-      pageRef: /posts
+    - name: Blog
+      pageRef: /
       weight: 1
     - name: Über mich
       pageRef: /about

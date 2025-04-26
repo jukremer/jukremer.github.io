@@ -19,7 +19,3 @@ tags: [crypto]
 ```txt
 jankremer.eu
 ```
-
-## OpenSea
-
-[Echinacea](https://opensea.io/Echinacea)

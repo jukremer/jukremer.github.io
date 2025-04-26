@@ -1,16 +1,20 @@
 {{ define "main" }}
-  {{ .Content }}
+  {{ .Content }} 
+  <div class="list">
+  <ul>
   {{ range .Pages }}
-    <a href="{{ .RelPermalink }}" style="display: block">
-      <div class="list">
+  <li> 
+  <a href="{{ .RelPermalink }}" style="display: block">
         <h2>{{ .Title }}</h2>
 
         <p class="lead">{{ .Description }}</p>
 
-        {{ $dateMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" }}
-        {{ $dateHuman := .Lastmod | time.Format ":date_long" }}
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
         <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-      </div>
     </a>
+  </li> 
   {{ end }}
+</ul>
+  </div>
 {{ end }}
