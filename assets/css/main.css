@@ -133,7 +133,11 @@ a {
     margin: 0.5rem;
     vertical-align: middle;
     fill: light-dark(var(--uchu-yin), var(--uchu-yang));
-    @media (prefers-color-scheme: dark) { path { fill: white; } }
+    @media (prefers-color-scheme: dark) {
+      path {
+        fill: white;
+      }
+    }
   }
 }
 
@@ -149,7 +153,9 @@ header {
       list-style: none;
       padding: 0 0.5rem;
 
-      a { color: light-dark(var(--uchu-yin), var(--uchu-yang)); }
+      a {
+        color: light-dark(var(--uchu-yin), var(--uchu-yang));
+      }
 
       .active {
         text-decoration: underline;
@@ -166,16 +172,21 @@ article {
   text-justify: inter-word;
   font-variant-numeric: oldstyle-nums;
 
-  img { width: 100%; }
+  img {
+    width: 100%;
+  }
 
-  >p:nth-of-type(2)::first-letter {
+  > p:nth-of-type(2)::first-letter {
     font-size: 3.3rem;
     float: left;
     line-height: 3rem;
     padding-right: 0.2rem;
   }
 
-  p, ul { font-family: var(--serif); }
+  p,
+  ul {
+    font-family: var(--serif);
+  }
 
   .dates {
     display: flex;
@@ -200,11 +211,17 @@ article {
     margin: 0;
   }
 
-  em { color: var(--uchu-red); }
+  em {
+    color: var(--uchu-red);
+  }
 
-  strong { color: var(--uchu-orange); }
+  strong {
+    color: var(--uchu-orange);
+  }
 
-  abbr { text-decoration-color: var(--uchu-blue); }
+  abbr {
+    text-decoration-color: var(--uchu-blue);
+  }
 
   table {
     border-collapse: collapse;
@@ -232,18 +249,25 @@ footer {
       text-decoration: none;
       color: light-dark(var(--uchu-yin), var(--uchu-yang));
 
-      &:hover { text-decoration: none; }
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     svg {
       height: 0.75rem;
       width: 0.75rem;
       vertical-align: middle;
+      margin: 0 1px;
     }
 
     #title {
       svg {
-        @media (prefers-color-scheme: dark) { path { fill: white; } }
+        @media (prefers-color-scheme: dark) {
+          path {
+            fill: white;
+          }
+        }
       }
     }
   }
@@ -269,7 +293,9 @@ footer {
       text-decoration: none;
     }
 
-    h2 { margin: 0; }
+    h2 {
+      margin: 0;
+    }
 
     .lead {
       margin: 0;

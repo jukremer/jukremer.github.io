@@ -12,11 +12,11 @@
   <div class="tags">
     <ul>
       <li>Tags:</li>
-    <ul>
-      {{- range . }}
-        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-      {{- end }}
-    </ul>
+      <ul>
+        {{- range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        {{- end }}
+      </ul>
     </ul>
   </div>
 {{- end }}

@@ -41,6 +41,11 @@
       apps = eachSystem (pkgs: {
         default = {
           type = "app";
+          meta = {
+            description = "Build my blog";
+            homepage = "https://jankremer.eu";
+            license = nixpkgs.lib.licenses.cc0;
+          };
           program =
             (pkgs.writeShellScript "build-website" ''
               set -e
