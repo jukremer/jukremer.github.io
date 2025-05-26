@@ -32,7 +32,6 @@ jobs:
         id: pages
         uses: actions/configure-pages@main
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
       - uses: DeterminateSystems/flake-checker-action@main
       - name: Build with Hugo
         run: nix run .
