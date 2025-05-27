@@ -259,14 +259,9 @@ footer {
       width: 0.75rem;
       vertical-align: middle;
       margin: 0 1px;
-    }
-
-    #title {
-      svg {
-        @media (prefers-color-scheme: dark) {
-          path {
-            fill: white;
-          }
+      @media (prefers-color-scheme: dark) {
+        path {
+          fill: white;
         }
       }
     }
