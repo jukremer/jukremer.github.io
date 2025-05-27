@@ -114,8 +114,8 @@ a {
   text-decoration: none;
 
   &:hover {
-    text-decoration-color: var(--uchu-blue);
     text-decoration: underline;
+    text-decoration-color: var(--uchu-blue);
   }
 }
 
@@ -155,11 +155,16 @@ header {
 
       a {
         color: light-dark(var(--uchu-yin), var(--uchu-yang));
-      }
 
-      .active {
-        text-decoration: underline;
-        text-decoration-color: var(--uchu-blue);
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: var(--uchu-blue);
+        }
+
+        &.active {
+          text-decoration: underline;
+          text-decoration-color: var(--uchu-blue);
+        }
       }
     }
   }
