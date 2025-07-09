@@ -1,0 +1,29 @@
+baseURL = "https://jankremer.eu/"
+title = "Jan Kremer"
+copyright = "CC0 1.0"
+defaultContentLanguage = "de"
+enableGitInfo = true
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+[markup.highlight]
+style = "rose-pine-dawn"
+
+[params]
+[params.author]
+name = "Jan Kremer"
+email = "mail@jankremer.eu"
+
+[menus]
+
+[[menus.main]]
+name = "Blog"
+pageRef = "/"
+weight = 1
+
+[[menus.main]]
+name = "Über mich"
+pageRef = "/about"
+weight = 2
