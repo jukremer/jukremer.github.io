@@ -16,7 +16,3 @@ Wenn ich nicht gerade lerne, mache ich gerne Sport, vor allem Joggen, Kraftsport
 ```bash
 gpg --keyserver keys.openpgp.org --receive-keys 20AF0A659F2B93AD918415D1A7DA689CB3B078EC
 ```
-
-### Matrix
-
-[@jankremer:matrix.org](https://matrix.to/#/@jankremer:matrix.org)
