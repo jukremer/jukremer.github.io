@@ -12,7 +12,3 @@ Wenn ich nicht gerade lerne, mache ich gerne Sport, vor allem Joggen, Kraftsport
 ### E-Mail
 
 [mail@jankremer.eu](mailto:mail@jankremer.eu)
-
-```bash
-gpg --keyserver keys.openpgp.org --receive-keys 20AF0A659F2B93AD918415D1A7DA689CB3B078EC
-```
