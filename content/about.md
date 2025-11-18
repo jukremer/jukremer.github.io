@@ -9,6 +9,4 @@ Wenn ich nicht gerade lerne, mache ich gerne Sport, vor allem Joggen, Kraftsport
 
 ## Kontakt
 
-### E-Mail
-
 [mail@jankremer.eu](mailto:mail@jankremer.eu)
