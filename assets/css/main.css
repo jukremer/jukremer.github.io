@@ -177,8 +177,23 @@ article {
   text-justify: inter-word;
   font-variant-numeric: oldstyle-nums;
 
+  figure {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+
+    figcaption {
+      p {
+        margin: 0.25rem 0 2rem;
+        font-family: var(--sans-serif);
+        text-align: center;
+      }
+    }
+  }
+
   img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
   > p:nth-of-type(2)::first-letter {
