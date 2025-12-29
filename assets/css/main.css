@@ -1,3 +1,9 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 :root {
   color-scheme: light dark;
 
@@ -92,7 +98,21 @@
   --uchu-yin: oklch(var(--uchu-yin-raw));
 
   --serif: Athelas, Garamond, "EB Garamond", serif;
-  --sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans-serif:
+    "Helvetica Neue", Helvetica, Arial, system-ui, "Segoe UI", Roboto,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --mono:
+    ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+html {
+  font-family: var(--sans-serif);
+  line-height: 1.15;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  tab-size: 4;
+  word-break: break-word;
 }
 
 body {
@@ -235,6 +255,7 @@ article {
     color: var(--uchu-red);
   }
 
+  b,
   strong {
     color: var(--uchu-orange);
   }
@@ -322,6 +343,7 @@ footer {
 }
 
 code {
+  font-family: var(--mono);
   border-radius: 0.3rem;
   font-size: 0.8rem;
   margin: 0;
@@ -329,6 +351,7 @@ code {
 }
 
 .highlight {
+  font-family: var(--mono);
   background: light-dark(var(--uchu-gray), var(--uchu-dark-gray));
   border-radius: 0.3rem;
   padding: 0.5rem 0rem;
