@@ -16,5 +16,12 @@
       {{ site.Title }}
     </a>
   </li>
+  <!-- <li>
+    {{ with .GitInfo }}
+    <a href="https://github.com/jukremer/jukremer.github.io/commit/{{ .Hash }}">
+      {{ partial "git.svg" }} {{ .Subject }} ({{ .AbbreviatedHash }})
+    </a>
+  {{ end }}
+  </li> -->
   <li>2021–{{ now.Year }}</li>
 </ul>
