@@ -11,7 +11,7 @@ unsafe = true
 [markup.goldmark.parser]
 wrapStandAloneImageWithinParagraph = false
 [markup.highlight]
-style = "rose-pine-dawn"
+style = "github"
 
 [params]
 [params.author]
