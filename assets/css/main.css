@@ -207,11 +207,9 @@ article {
     margin: 0;
 
     figcaption {
-      p {
-        margin: 0.25rem 0 2rem;
-        font-family: var(--sans-serif);
-        text-align: center;
-      }
+      margin: 0.25rem 0 2rem;
+      font-family: var(--sans-serif);
+      text-align: center;
     }
   }
 
