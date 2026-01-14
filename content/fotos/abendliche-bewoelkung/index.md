@@ -6,3 +6,4 @@ tags: [fotos, regensburg]
 ---
 
 ![Abendliche Bewölkung über Regensburg](./abendliche-bewoelkung.webp "Abendliche Bewölkung über Regensburg")
+{fetchpriority="high"}

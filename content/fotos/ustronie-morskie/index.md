@@ -6,6 +6,7 @@ tags: [fotos, polen]
 ---
 
 ![Holzwall](./holzwall.jpeg "Holzwall")
+{fetchpriority="high"}
 
 ![Pfote](./pfote.jpeg "Pfote")
 

@@ -4,15 +4,6 @@ copyright = "CC0 1.0"
 defaultContentLanguage = "de"
 enableGitInfo = true
 
-[markup]
-[markup.goldmark]
-[markup.goldmark.renderer]
-unsafe = true
-[markup.goldmark.parser]
-wrapStandAloneImageWithinParagraph = false
-[markup.highlight]
-style = "github"
-
 [params]
 [params.author]
 name = "Jan Kremer"
@@ -34,3 +25,14 @@ weight = 2
 name = "Über mich"
 pageRef = "/about"
 weight = 3
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+[markup.goldmark.parser]
+wrapStandAloneImageWithinParagraph = false
+[markup.goldmark.parser.attribute]
+block = true
+[markup.highlight]
+style = "github"
