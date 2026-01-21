@@ -5,6 +5,14 @@ date: 2025-11-15T21:53:01+01:00
 tags: [fotos, polen]
 ---
 
+{{< figure
+src="holzwall.jpeg"
+alt="Holzwall"
+caption="Holzwall"
+fetchpriority="high"
+
+> }}
+
 ![Holzwall](./holzwall.jpeg "Holzwall")
 {fetchpriority="high"}
 

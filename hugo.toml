@@ -10,17 +10,14 @@ name = "Jan Kremer"
 email = "mail@jankremer.eu"
 
 [menus]
-
 [[menus.main]]
 name = "Blog"
 pageRef = "/"
 weight = 1
-
 [[menus.main]]
 name = "Fotos"
 pageRef = "/fotos"
 weight = 2
-
 [[menus.main]]
 name = "Über mich"
 pageRef = "/about"
@@ -36,3 +33,18 @@ wrapStandAloneImageWithinParagraph = false
 block = true
 [markup.highlight]
 style = "github"
+
+[mediaTypes]
+[mediaTypes.'application/atom+xml']
+suffixes = ['atom']
+
+[outputFormats]
+[outputFormats.atom]
+mediaType = 'application/atom+xml'
+noUgly = true
+
+[outputs]
+home = ['html', 'rss', 'atom']
+section = ['html', 'rss', 'atom']
+taxonomy = ['html', 'rss', 'atom']
+term = ['html', 'rss', 'atom']
