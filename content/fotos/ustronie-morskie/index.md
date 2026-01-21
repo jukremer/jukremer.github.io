@@ -9,21 +9,34 @@ tags: [fotos, polen]
 src="holzwall.jpeg"
 alt="Holzwall"
 caption="Holzwall"
-fetchpriority="high"
+fetchpriority="high" >}}
 
-> }}
+{{< figure
+src="pfote.jpeg"
+alt="Pfote"
+caption="Pfote" >}}
 
-![Holzwall](./holzwall.jpeg "Holzwall")
-{fetchpriority="high"}
+{{< figure
+src="nala.jpeg"
+alt="Nala"
+caption="Nala" >}}
 
-![Pfote](./pfote.jpeg "Pfote")
+{{< figure
+src="pier.jpeg"
+alt="Pier"
+caption="Pier" >}}
 
-![Nala](./nala.jpeg "Nala")
+{{< figure
+src="Dom-1.jpeg"
+alt="Kolberger Dom"
+caption="Kolberger Dom" >}}
 
-![Pier](./pier.jpeg "Pier")
+{{< figure
+src="dom-2.jpeg"
+alt="Kolberger Dom"
+caption="Kolberger Dom" >}}
 
-![Kolberger Dom](./dom-1.jpeg "Kolberger Dom")
-
-![Dom](./dom-2.jpeg "Dom")
-
-![Möve](./moeve.jpeg "Möve")
+{{< figure
+src="moeve.jpeg"
+alt="Möve"
+caption="Möve" >}}

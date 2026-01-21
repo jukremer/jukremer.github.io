@@ -206,7 +206,7 @@ article {
     height: auto;
     margin: 0;
 
-    figcaption {
+    figcaption > p {
       margin: 0.25rem 0 2rem;
       font-family: var(--sans-serif);
       text-align: center;
