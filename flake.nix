@@ -52,6 +52,22 @@
               ${pkgs.hugo}/bin/hugo --minify
             '').outPath;
         };
+        deploy = {
+          type = "app";
+          meta = {
+            description = "Deploy to Codeberg";
+            homepage = "https://kremer.codeberg.page";
+            license = nixpkgs.lib.licenses.cc0;
+          };
+          program =
+            (pkgs.writeShellScript "deploy-website" ''
+              set -e
+              ${pkgs.hugo}/bin/hugo --minify
+              cd public
+              git commit --all -m "Deploy"
+              git push
+            '').outPath;
+        };
       });
     };
 }
