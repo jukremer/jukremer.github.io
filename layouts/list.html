@@ -1,20 +1,18 @@
 {{ define "main" }}
-  {{ .Content }}
-  <div class="list">
+{{ .Content }}
+<div class="list">
     <ul>
-      {{ range .Pages }}
+        {{ range .Pages }}
         <li>
-          <a href="{{ .RelPermalink }}" style="display: block">
-            <h2>{{ .Title }}</h2>
-
-            <p class="lead">{{ .Description }}</p>
-
-            {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-            {{ $dateHuman := .Date | time.Format ":date_long" }}
-            <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-          </a>
+            <a href="{{ .RelPermalink }}" style="display: block">
+                <h2>{{ .Title }}</h2>
+                <p class="lead">{{ .Description }}</p>
+                {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+                {{ $dateHuman := .Date | time.Format ":date_long" }}
+                <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+            </a>
         </li>
-      {{ end }}
+        {{ end }}
     </ul>
-  </div>
+</div>
 {{ end }}

@@ -1,27 +1,25 @@
 <ul>
-  <li>
-    <a
-      href="https://creativecommons.org/publicdomain/zero/1.0/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="CC0: This work has been marked as dedicated to the public domain."
-    >
-      {{ partial "cc.svg" . }}
-      {{ partial "zero.svg" . }}
-    </a>
-  </li>
-  <li>
-    <a href="/about" id="title">
-      {{ partial "logo.svg" . }}
-      {{ site.Title }}
-    </a>
-  </li>
-  <!-- <li>
-    {{ with .GitInfo }}
-    <a href="https://github.com/jukremer/jukremer.github.io/commit/{{ .Hash }}">
-      {{ partial "git.svg" }} {{ .Subject }} ({{ .AbbreviatedHash }})
-    </a>
-  {{ end }}
-  </li> -->
-  <li>2021–{{ now.Year }}</li>
+    <li>
+        <a href="https://creativecommons.org/publicdomain/zero/1.0/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="CC0: This work has been marked as dedicated to the public domain.">
+            {{ partial "cc.svg" . }}
+            {{ partial "zero.svg" . }}
+        </a>
+    </li>
+    <li>
+        <a href="/about" id="title">
+            {{ partial "logo.svg" . }}
+            {{ site.Title }}
+        </a>
+    </li>
+    <!-- <li>
+        {{ with .GitInfo }}
+        <a href="https://github.com/jukremer/jukremer.github.io/commit/{{ .Hash }}">
+            {{ partial "git.svg" }} {{ .Subject }} ({{ .AbbreviatedHash }})
+        </a>
+        {{ end }}
+    </li> -->
+    <li>2021–{{ now.Year }}</li>
 </ul>

@@ -10,18 +10,18 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
 <title>
-  {{ if .IsHome }}
+    {{ if .IsHome }}
     {{ site.Title }}
-  {{ else }}
+{{ else }}
     {{ printf "%s – %s" .Title
-      site.Title
+    site.Title
     }}
-  {{ end }}
+    {{ end }}
 </title>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
 {{ with .OutputFormats.Get "rss" }}
-  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end }}{{ with .OutputFormats.Get "atom" }}
-  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end }}
