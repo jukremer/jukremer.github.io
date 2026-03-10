@@ -1,9 +1,8 @@
----
-title: Markdown Tables Suck
-date: 2023-12-25T16:28:52+01:00
-tags:
-  - micro
----
++++
+date = '2023-12-25T16:28:52+01:00'
+tags = ['micro']
+title = 'Markdown Tables Suck'
++++
 
 Tables are arguably the worst part of Markdown.
 No horizontal lines except for the mandatory one at the top.

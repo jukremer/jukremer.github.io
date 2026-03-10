@@ -1,9 +1,9 @@
----
-title: Ustronie Morskie
-description: Polen
-date: 2025-11-15T21:53:01+01:00
-tags: [fotos, polen]
----
++++
+date = '2025-11-15T21:53:01+01:00'
+description = 'Polen'
+tags = ['fotos', 'polen']
+title = 'Ustronie Morskie'
++++
 
 {{< figure
 src="holzwall.jpeg"

@@ -1,9 +1,8 @@
----
-title: Use Timestamps
-date: 2023-11-15T10:12:30+01:00
-tags:
-  - micro
----
++++
+date = '2023-11-15T10:12:30+01:00'
+tags = ['micro']
+title = 'Use Timestamps'
++++
 
 Every blog post should include a timestamp.
 In fact, this extends to almost anything online and even offline.

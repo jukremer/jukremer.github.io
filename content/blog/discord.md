@@ -1,8 +1,8 @@
----
-title: Discord
-date: 2026-02-16T19:45:02+01:00
-tags: micro
----
++++
+date = '2026-02-16T19:45:02+01:00'
+tags = 'micro'
+title = 'Discord'
++++
 
 Since [Discord announced](https://discord.com/press-releases/discord-launches-teen-by-default-settings-globally) it will start asking users for age verification, I became obsessed with reading about alternatives to the platform. And there are a lot of them. As a self-hoster, I immediately thought of Matrix and XMPP. Both have their pros and cons and different implementations.
 
