@@ -1,5 +1,5 @@
 {
-  description = "Hugo website";
+  description = "Jan Kremer blog";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     treefmt = {
@@ -28,6 +28,7 @@
           buildInputs = with pkgs; [
             go
             hugo
+            vscode-langservers-extracted
           ];
         };
       });
