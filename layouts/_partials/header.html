@@ -1,2 +1,6 @@
-<a href="/" class="title">{{ partial "logo.svg" . }}{{ site.Title }}</a>
+{{- $attrs := dict "class" "title" }}
+{{- if .IsHome }}
+{{- $attrs = merge $attrs (dict "class" "title active" "aria-current" "page") }}
+{{- end }}
+<a href="/" {{ range $k, $v :=$attrs }}{{ $k }}="{{ $v }}" {{ end }}>{{ partial "logo.svg" . }}{{ site.Title }}</a>
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}

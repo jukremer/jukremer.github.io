@@ -12,7 +12,7 @@ email = "mail@jankremer.eu"
 [menus]
 [[menus.main]]
 name = "Blog"
-pageRef = "/"
+pageRef = "/blog"
 weight = 1
 [[menus.main]]
 name = "Fotos"
