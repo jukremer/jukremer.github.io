@@ -1,5 +1,5 @@
 {
-  description = "Jan Kremer blog";
+  description = "Blog von Jan Kremer";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     treefmt = {
@@ -24,10 +24,9 @@
     {
       devShells = eachSystem (pkgs: {
         default = pkgs.mkShell {
-          name = "Hugo website";
+          name = "Zola website";
           buildInputs = with pkgs; [
-            go
-            hugo
+            zola
             vscode-langservers-extracted
           ];
         };
@@ -50,7 +49,7 @@
           program =
             (pkgs.writeShellScript "build-website" ''
               set -e
-              ${pkgs.hugo}/bin/hugo --minify
+              ${pkgs.zola}/bin/zola build --minify
             '').outPath;
         };
         deploy = {
@@ -63,7 +62,7 @@
           program =
             (pkgs.writeShellScript "deploy-website" ''
               set -e
-              ${pkgs.hugo}/bin/hugo --minify
+              ${pkgs.zola}/bin/zola build --minify
               cd public
               git commit --all -m "Deploy"
               git push

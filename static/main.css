@@ -164,11 +164,6 @@ svg {
       }
     }
   }
-
-  &.active {
-    text-decoration: underline;
-    text-decoration-color: var(--uchu-blue);
-  }
 }
 
 header {
@@ -351,24 +346,14 @@ footer {
   }
 }
 
-code {
-  font-family: var(--mono);
-  border-radius: 0.3rem;
-  font-size: 0.8rem;
-  margin: 0;
-  padding: 0 1rem;
-}
-
-.highlight {
-  font-family: var(--mono);
+.giallo {
   border: 1px solid light-dark(var(--uchu-gray), var(--uchu-dark-gray));
   border-radius: 0.3rem;
-  margin: 1rem 0;
-  padding: 0 1rem;
-  overflow: auto;
+}
 
-  pre {
-    margin: 0;
-    padding: 0;
-  }
+.giallo-l {
+  font-family: var(--mono);
+  padding: 1rem;
+  overflow: auto;
+  display: block;
 }

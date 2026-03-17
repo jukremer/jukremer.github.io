@@ -1,0 +1,6 @@
+{% macro menu_item(url, name) %}
+    <li>
+        <a href="{{ url }}" {% if current_path==url %} class="active" aria-current="page" {% elif current_path is
+        starting_with(url) and url !="/" %} class="ancestor" aria-current="true" {% endif %}>{{ name }}</a>
+    </li>
+{% endmacro %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="list">
+        <ul>
+            <!-- If you are using pagination, section.pages will be empty.
+You need to use the paginator object -->
+            {% set blog = get_section(path="blog/_index.md") %}
+            {% set fotos = get_section(path="fotos/_index.md") %}
+            {% set all_pages = blog.pages | concat(with=fotos.pages)  | sort(attribute="date") | reverse %}
+            {% for page in all_pages %}
+                <li>
+                    <a href="{{ page.permalink | safe }}" style="display: block">
+                        <h2>{{ page.title }}</h2>
+                        <p class="lead">{{ page.description | safe }}</p>
+                        <time datetime="{{ page.date | date(format="%Y-%m-%d %H:%M") }}">{{ page.date | date(format="%e. %B %Y", locale="de_DE") }}</time>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

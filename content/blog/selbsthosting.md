@@ -1,8 +1,8 @@
 +++
-date = '2025-04-14'
-description = 'Kleiner Computer, große Pläne'
-tags = ['selbsthosting', 'nixos', 'git']
-title = 'Selbsthosting'
+title = "Selbsthosting"
+date = 2025-04-14
+description = "Kleiner Computer, große Pläne"
+tags = [ "selbsthosting", "nixos", "git" ]
 +++
 
 Seit etwa 2020 hat mich die Idee fasziniert, meinen _eigenen Server zu betreiben_ – also die volle Kontrolle über Daten, Dienste und Medien zu haben. Vor allem auf Reddit, und dort besonders in den Communities [r/selfhosted](https://www.reddit.com/r/selfhosted) und [r/homelab](https://www.reddit.com/r/homelab), habe ich immer wieder spannende Projekte gesehen. Lange blieb das für mich ein Traum – zu wenig Zeit, zu wenig Geld. Aber im April 2024 war es so weit: Mein kleines Selbsthosting-Abenteuer begann.

@@ -1,0 +1,70 @@
+{% import "macros.html" as macros %}
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% if current_path == "/" %}
+                {{ config.title }}
+            {% elif section %}
+                {{ section.title }} – {{ config.title }}
+            {% elif page %}
+                {{ page.title }} – {{ config.title }}
+            {% endif %}
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Blog von Jan Kremer" />
+        <meta name="author" content="Jan Kremer" />
+        <meta name="apple-mobile-web-app-title" content="Jan Kremer" />
+        <meta name="keywords" content="Blog" />
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        {% block rss %}
+            <link rel="alternate"
+                  type="application/atom+xml"
+                  title="Atom feed"
+                  href="{{ get_url(path=" atom.xml", trailing_slash=false) }}">
+            <link rel="alternate"
+                  type="application/rss+xml"
+                  title="RSS"
+                  href="{{ get_url(path=" rss.xml", trailing_slash=false) }}">
+        {% endblock %}
+        <link rel="stylesheet" href="/main.css" />
+    </head>
+    <body>
+        <header>
+            <a href="/" class="title">{{ load_data(path="templates/logo.svg") | safe }}Jan Kremer</a>
+            <nav>
+                <ul>
+                    {{ macros::menu_item(url="/blog/", name="Blog") }}
+                    {{ macros::menu_item(url="/fotos/", name="Fotos") }}
+                    {{ macros::menu_item(url="/about/", name="Über mich") }}
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock content %}
+        </main>
+        <footer>
+            <ul>
+                <li>
+                    <a href="https://creativecommons.org/publicdomain/zero/1.0/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="CC0: This work has been marked as dedicated to the public domain.">
+                        {{ load_data(path="templates/cc.svg") | safe }}
+                        {{ load_data(path="templates/zero.svg") | safe }}
+                    </a>
+                </li>
+                <li>
+                    <a href="/" id="title">{{ load_data(path="templates/logo.svg") | safe }}Jan Kremer</a>
+                </li>
+                <li>2021–{{ now() | date(format="%Y") }}</li>
+            </ul>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="list">
+        <ul>
+            <!-- If you are using pagination, section.pages will be empty.
+You need to use the paginator object -->
+            {% for page in section.pages %}
+                <li>
+                    <a href="{{ page.permalink | safe }}" style="display: block">
+                        <h2>{{ page.title }}</h2>
+                        <p class="lead">{{ page.description | safe }}</p>
+                        <time datetime="{{ page.date | date(format="%Y-%m-%d %H:%M") }}">{{ page.date | date(format="%e. %B %Y", locale="de_DE") }}</time>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

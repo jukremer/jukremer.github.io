@@ -1,0 +1,15 @@
+<figure>
+    <img src="{{ src }}" {% if alt %}alt="{{ alt }}"{% endif %} {% if first %} fetchpriority="high" decoding="async" {%
+        else %} loading="lazy" decoding="async" {% endif %}>
+        {% if caption or alt %}
+            <figcaption>
+                <p>
+                    {% if caption %}
+                        {{ caption }}
+                    {% elif alt %}
+                        {{ alt }}
+                    {% endif %}
+                </p>
+            </figcaption>
+        {% endif %}
+    </figure>

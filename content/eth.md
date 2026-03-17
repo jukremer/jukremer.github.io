@@ -1,7 +1,7 @@
 +++
-date = '2022-12-10'
-tags = ['crypto']
-title = 'Ethereum'
+title = "Ethereum"
+date = 2022-12-10
+tags = [ "crypto" ]
 +++
 
 ## Address

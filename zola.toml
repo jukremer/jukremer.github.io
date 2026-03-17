@@ -1,0 +1,85 @@
+# The URL the site will be built for
+base_url = "https://jankremer.eu"
+
+title = "Jan Kremer"
+description = "Blog von Jan Kremer"
+author = "Jan Kremer"
+
+default_language = "de"
+
+# Whether dotfiles at the root level of the output directory are preserved when (re)building the site.
+# Enabling this also prevents the deletion of the output folder itself on rebuilds.
+# preserve_dotfiles_in_output = true
+
+generate_feeds = true
+feed_filenames = ["atom.xml", "rss.xml"]
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+[markdown]
+
+# CSS class to add to external links (e.g. "external-link")
+# external_links_class =
+
+# Whether to set decoding="async" and loading="lazy" for all images
+# When turned on, the alt text must be plain text.
+# For example, `![xx](...)` is ok but `![*x*x](...)` isn’t ok
+lazy_async_image = true
+definition_list = true
+bottom_footnotes = true
+smart_punctuation = true
+
+# When set to "true", support for GitHub-style alerts, a.k.a. callouts or admonitions, is enabled in the Markdown parser.
+# For example, this Markdown syntax:
+#
+#     > [!NOTE]
+#     > alert note
+#
+# will result in the following generated HTML:
+#
+#     <blockquote class="markdown-alert-note">
+#     <p>alert note</p>
+#     </blockquote>
+#
+# where the CSS class name suffix may be `note`, `tip`, `important`, `warning`, or `caution`, depending on the alert type.
+# Visual appearance depends on theme-level support; refer to your theme's documentation for more information.
+github_alerts = false
+
+# insert_anchor_links = "left"
+
+[markdown.highlighting]
+error_on_missing_language = true
+
+# Whether to use inline hex colours (`inline`) or CSS classes (`class`) 
+style = "inline"
+
+light_theme = "catppuccin-latte"
+dark_theme = "catppuccin-macchiato"
+
+# A list of files for additional JSON TextMate grammars
+extra_grammars = []
+
+[search]
+# Whether to include the title of the page/section in the index
+include_title = true
+# Whether to include the description of the page/section in the index
+include_description = false
+# Whether to include the RFC3339 datetime of the page in the search index
+include_date = false
+# Whether to include the path of the page/section in the index (the permalink is always included)
+include_path = false
+# Whether to include the rendered content of the page/section in the index
+include_content = true
+# At which code point to truncate the content to. Useful if you have a lot of pages and the index would
+# become too big to load on the site. Defaults to not being set.
+# truncate_content_length = 100
+
+# Whether to produce the search index as a javascript file or as a JSON file
+# Accepted values:
+# - "elasticlunr_javascript", "elasticlunr_json"
+# - "fuse_javascript", "fuse_json"
+index_format = "elasticlunr_javascript"
+
+[extra]
+# Put all your custom variables here

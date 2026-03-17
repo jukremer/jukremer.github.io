@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <article>
+        <div class="dates">
+            <p>
+                <time datetime="{{ page.date }}">{{ page.date | date(format="%e. %B %Y", locale="de_DE") }}</time>
+            </p>
+            {% if page.updated %}
+                <p>
+                    Aktualisiert: <time datetime="{{ page.updated }}">{{ page.updated | date(format="%e. %B %Y", locale="de_DE") 
+                }}</time>
+            </p>
+        {% endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ page.description }}</p>
+    {{ page.content | safe }}
+</article>
+{% endblock content %}
