@@ -35,7 +35,7 @@ Das Betriebssystem meiner Wahl ist [NixOS](https://nixos.org/). Hauptsächlich, 
 
 **Deklarativ** bedeutet: Ich beschreibe in einer Konfigurationsdatei, _was_ das System tun soll – nicht _wie_. Dadurch ist mein Setup reproduzierbar, nachvollziehbar und schnell wiederherstellbar.
 
-Viele Dienste lassen sich mit nur wenigen Zeilen Code aktivieren. Ich habe [meine Konfiguration](https://github.com/jukremer/nix-config) auf GitHub veröffentlicht, falls jemand reinschauen oder sie als Grundlage verwenden möchte.
+Viele Dienste lassen sich mit nur wenigen Zeilen Code aktivieren. ~~Ich habe meine Konfiguration auf GitHub veröffentlicht, falls jemand reinschauen oder sie als Grundlage verwenden möchte.~~
 
 ### Tailscale
 
@@ -69,4 +69,4 @@ Ein weiterer Grund: Ich habe den Server _kaum genutzt_. Meine iCloud läuft noch
 
 Aber: Ich habe in den letzten 8 Monaten extrem viel gelernt – über Linux, Netzwerke, NixOS, Systemadministration, Sicherheit und mehr. Das Projekt hat mir gezeigt, wie viel man aus einem alten Mini-PC herausholen kann. Vielleicht wird der Server eines Tages reaktiviert – in neuer Form. Für den Moment war es vor allem: _ein spannendes Lernprojekt_.
 
-Falls du Fragen hast oder selbst mit Selbsthosting starten willst: Schreib mir gern oder schau dir [meine Konfiguration](https://github.com/jukremer/nix-config) auf GitHub an. Vielleicht hilft dir mein Weg ja bei deinem Einstieg.
+Falls du Fragen hast oder selbst mit Selbsthosting starten willst: Schreib mir gern ~~oder schau dir meine Konfiguration auf GitHub an~~. Vielleicht hilft dir mein Weg ja bei deinem Einstieg.
